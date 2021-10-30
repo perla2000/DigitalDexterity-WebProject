@@ -43,7 +43,7 @@ class App extends Component {
               <PPTests />
             </Route>
             <Route exact path="/extest">
-              <ExcelTests />
+              <ExcelTest />
             </Route>
             <Route exact path="/test">
               <Tests />
