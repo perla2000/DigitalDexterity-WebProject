@@ -75,7 +75,7 @@ class Navv extends Component {
         <img src={"./assets/logo.png"} style={{ width: 40, height: 40 }} />
 
         <NavLink className="nav-link" to="">
-          <NavLink href="/home" style={{ color: "white" }}>
+          <NavLink href="/profile" style={{ color: "white" }}>
             Profile
           </NavLink>
         </NavLink>
