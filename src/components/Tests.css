@@ -1,23 +1,24 @@
 .body {
-  background-color: rgb(48, 49, 49);
+  background-color: rgb(255, 255, 255);
   font-family: Helvetica;
 }
 
-#main {
+.main {
   width: 80%;
-  max-width: 950px;
-  margin: auto;
+  max-width: 100%;
+  margin-left:20%;
   padding: 30px 30px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+
 }
 
 .header {
   margin-top: 0;
+  border: 2px solid black;
   padding: 5px;
   height: 250px;
-  background: linear-gradient(to bottom, black, black, rgb(255, 255, 255));
-  color: white;
-
+  background: rgb(27, 0, 5);
+  color: rgb(252, 252, 252);
   font-weight: 100;
 }
 
@@ -40,6 +41,8 @@ button {
   width: 100px;
   margin-top: 40px;
   font-size: larger;
+  background-color: rgb(89, 124, 241);
+  color:white;
 }
 
 p {

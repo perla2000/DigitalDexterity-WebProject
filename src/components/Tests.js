@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Tests.css";
-import Object from "../shared/object";
+ 
 
 class Tests extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Tests extends Component {
     return (
       <html>
         <body>
-          <div id="main">
+          <div class="main">
             <div class="header">
               <h1
                 style={{
@@ -54,6 +54,22 @@ class Tests extends Component {
               </fieldset>
             </form>
           </div>
+          {/* <p>
+            Your grade is: <span id="grade">__</span>
+          </p>
+          <p id="grade2"></p> 
+         <script>
+            document.getElementById("form1").onsubmit = function(){
+              variable = parseInt(document.querySelector('input[name = "variable"]:checked').value);
+              sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+              con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+              ifstate = parseInt(document.querySelector('input[name = "ifstate"]:checked').value);
+
+              result = variable + sub + con + ifstate;
+              document.getElementById("grade").innerHTML = result;
+              return false; 
+        &rbrace;
+        </script> */}
         </body>
       </html>
     );

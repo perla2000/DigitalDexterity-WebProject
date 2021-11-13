@@ -14,12 +14,16 @@ import ExcelTest from "./components/ExcelTest.js";
 import PPTests from "./components/PPTests.js";
 import Trying from "./components/Trying.js";
 import Profile from "./components/Profile.js";
-
+import AdminPage from "./components/adminPage.js";
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App" style={{ objectFit: "cover" }}>
+        <div>
+        <Navv/>
+        <AdminPage/>
+        </div>
+        {/* <div className="App" style={{ objectFit: "cover" }}>
           {
             <div
               style={{
@@ -65,7 +69,7 @@ class App extends Component {
               </Switch>
             </div>
           }
-        </div>
+        </div> */}
       </Router>
     );
   }

@@ -41,9 +41,18 @@ class Navv extends Component {
               </NavLink>
             </NavItem>
 
+            
+
+            <NavItem className="mt-0 ">
+              <NavLink className="nav-link" to="/github">
+                <NavLink href="https://github.com/reactstrap/reactstrap">
+                  Test
+                </NavLink>
+              </NavLink>
+            </NavItem>
             <UncontrolledDropdown nav inNavbar className="mt-2 ">
               <DropdownToggle nav caret>
-                Tests
+                Test Training
               </DropdownToggle>
               <DropdownMenu left>
                 <DropdownItem>
@@ -51,23 +60,11 @@ class Navv extends Component {
                   <Link to="/test">Microsoft Word Test</Link>
                 </DropdownItem>
                 <DropdownItem>
-                  <Link to="/extest">Microsoft Excel Test</Link>
+                  <Link to="/test">Microsoft Excel Test</Link>
                 </DropdownItem>
                 <DropdownItem>
-                  <Link to="/pptest">Microsoft Powerpoint Test</Link>
+                  <Link to="/test">Microsoft Powerpoint Test</Link>
                 </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-
-            <UncontrolledDropdown nav inNavbar className="mt-2 ">
-              <DropdownToggle nav caret>
-                Training
-              </DropdownToggle>
-              <DropdownMenu left>
-                <DropdownItem>Webinars</DropdownItem>
-                <DropdownItem>Courses</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Exercises</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
