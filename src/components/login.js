@@ -34,7 +34,7 @@ function SectionLogin() {
           <source src={vid} type="video/mp4" />
         </video>
 
-        <Container>
+        <Container className="login">
           <Row className="mx-auto">
             <Col className="mx-auto" lg="5" md="10">
               <Card
@@ -53,8 +53,6 @@ function SectionLogin() {
                       className="btn-neutral btn-just-icon mt-0 "
                       color="facebook"
                       href="#pablo"
-                      
-                      
                       onClick={(e) => e.preventDefault()}
                     >
                       <i className="fa fa-facebook-square" />
@@ -68,11 +66,9 @@ function SectionLogin() {
                       <i className="fa fa-google-plus" />
                     </Button>
                     <Button
-                    
                       className="btn-neutral btn-just-icon mt-0 ml-1"
                       color="twitter"
                       href="#pablo"
-                      
                       onClick={(e) => e.preventDefault()}
                     >
                       <i className="fa fa-twitter" />
@@ -80,7 +76,7 @@ function SectionLogin() {
                   </div>
                 </div>
                 <Form className="register-form">
-                  <label className="mt-5" style={{ color:"black" }}>
+                  <label className="mt-5" style={{ color: "black" }}>
                     Email
                   </label>
                   <InputGroup className="form-group-no-border">
@@ -91,7 +87,7 @@ function SectionLogin() {
                     </InputGroupAddon>
                     <Input placeholder="Email" type="email" />
                   </InputGroup>
-                  <label className="mt-5 " style={{ color:"black"}}>
+                  <label className="mt-5 " style={{ color: "black" }}>
                     Password
                   </label>
                   <InputGroup className="form-group-no-border">
@@ -110,7 +106,7 @@ function SectionLogin() {
                       type="button"
                       href="/home"
                     >
-                      Register
+                      Login
                     </Button>
                   </div>
                 </Form>

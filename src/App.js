@@ -5,7 +5,6 @@ import Navv from "./components/Navv.js";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Carousel from "./components/Carousel.js";
-import Login from "./components/login.js";
 import Footer from "./components/Footer.js";
 import Tests from "./components/Tests.js";
 import Register from "./components/Register.js";
@@ -14,6 +13,9 @@ import ExcelTest from "./components/ExcelTest.js";
 import PPTests from "./components/PPTests.js";
 import Trying from "./components/Trying.js";
 import Profile from "./components/Profile.js";
+import FormSignup from "./components/FormSignup";
+import Form from "./components/Form";
+import LogForm from "./components/LogForm";
 
 class App extends Component {
   render() {
@@ -35,10 +37,10 @@ class App extends Component {
                   <Welcome />
                 </Route>
                 <Route exact path="/login">
-                  <SectionLogin />
+                  <LogForm />
                 </Route>
                 <Route exact path="/register">
-                  <Register />
+                  <Form />
                 </Route>
                 <Route exact path="/home">
                   <div>
