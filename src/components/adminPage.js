@@ -5,7 +5,7 @@ import "./adminPage.css";
 // import EditableRow from "./components/EditableRow.js";
 import "./adminPage.css";
 import Object from "../shared/object";
-
+const Test=Object.Powerpoint;
 const AdminPage = () => {
   const [Questions, setQuestions] = useState(Object.Powerpoint.questions);
 
