@@ -87,15 +87,12 @@
   margin-bottom: 10px;
   color: rgb(0, 0, 0);
 }
-<<<<<<< Updated upstream:src/components/login/LogForm.css
-=======
 .form-label1 {
   display: inline-block;
   font-size: 15px;
   margin-bottom: 10px;
   color: rgb(0, 0, 0);
 }
->>>>>>> Stashed changes:src/components/LogForm.css
 .form-input {
   display: block;
   padding-left: 10px;
