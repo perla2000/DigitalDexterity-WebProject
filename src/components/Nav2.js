@@ -25,7 +25,7 @@ class Nav2 extends Component {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav navbar>
-            <NavbarBrand className="mt-8">Digital Dexterity</NavbarBrand>
+            <NavbarBrand className="mt-2">Digital Dexterity</NavbarBrand>
           </Nav>
         </Collapse>
       </Navbar>

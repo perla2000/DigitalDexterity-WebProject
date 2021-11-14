@@ -7,7 +7,6 @@ import Carousel from "../Carousel.js";
 import Footer from "../Footer.js";
 import Navv from "../Navv";
 import Nav2 from "../Nav2";
-import useLogForm from "./useLogForm";
 import { Redirect } from "react-router";
 
 const Form = () => {
@@ -31,12 +30,10 @@ const Form = () => {
         </>
       ) : (
         <div className="container-center">
-          if (values.username=="admin" && values.password=="admin"){" "}
-          {Redirect("/admin")}
-          {/* <Navv />
+          <Navv />
           <Carousel />
           <Trying />
-          <Footer /> */}
+          <Footer />
         </div>
       )}
     </>
