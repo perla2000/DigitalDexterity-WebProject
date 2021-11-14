@@ -17,7 +17,7 @@ function Welcome() {
       <div style={{ backgroundColor: "black", height: "90px" }}>
         <Link
           to="/login"
-          className="btn btn-primary"
+          className="btn"
           style={{
             width: "250px",
             height: "50px",
@@ -25,7 +25,7 @@ function Welcome() {
             backgroundColor: "black",
             marginLeft: "85%",
             marginBottom: "20px",
-            borderBlockColor: "black",
+            color: "white",
           }}
         >
           Sign up/ Log In

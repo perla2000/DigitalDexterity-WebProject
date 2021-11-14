@@ -61,9 +61,6 @@ class App extends Component {
                     <Route exact path="/admin">
                       <AdminPage />
                     </Route>
-                    <Route exact path="/test">
-                      <Tests />
-                    </Route>
                     <Route exact path="/pptest">
                       <PPTests />
                     </Route>

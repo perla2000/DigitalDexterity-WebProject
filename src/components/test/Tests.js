@@ -29,6 +29,7 @@ class Tests extends Component {
               </h1>
             </div>
             <form id="form1">
+<<<<<<< HEAD
               <fieldset>
                 {this.state.Object.Powerpoint.questions.map((question) => (
                   //every element in react requires a key for updates
@@ -46,13 +47,35 @@ class Tests extends Component {
                           {answer[0]}
                         </label>
                       ))}
+=======
+              <div>
+                <fieldset>
+                  {this.state.Object.Powerpoint.questions.map((question, j) => (
+                    //every element in react requires a key for updates
+
+                    <div style={{ marginTop: "50px" }} key={question.id}>
+                      <div>
+                        <h2>{question.description}</h2>
+                        {question.answers.map((answer) => (
+                          <label for="overtype">
+                            <input
+                              type="radio"
+                              name={j}
+                              value="0"
+                              id="overtype"
+                            />
+                            {answer[0]}
+                          </label>
+                        ))}
+                      </div>
+>>>>>>> dba173774bbb43c5ee38d7152cb63b287cdba322
                     </div>
-                  </div>
-                ))}
-                <button onClick="returnScore()" type="submit" value="Submit">
-                  Submit
-                </button>
-              </fieldset>
+                  ))}
+                  <button onClick="returnScore()" type="submit" value="Submit">
+                    Submit
+                  </button>
+                </fieldset>
+              </div>
             </form>
           </div>
           {/* <p>
