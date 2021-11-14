@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Tests.css";
+import timerGame from "../timer.js"
+ 
 import Object from "../../shared/object";
 
 class Tests extends Component {
@@ -9,11 +11,12 @@ class Tests extends Component {
       Object,
     };
   }
-
   render() {
     return (
       <html>
         <body>
+            <timerGame/>
+         
           <div class="main">
             <div class="header">
               <h1
@@ -25,12 +28,10 @@ class Tests extends Component {
                 {this.state.Object.Powerpoint.quizTitle}
               </h1>
             </div>
-
             <form id="form1">
               <fieldset>
                 {this.state.Object.Powerpoint.questions.map((question) => (
                   //every element in react requires a key for updates
-
                   <div style={{ marginTop: "50px" }} key={question.id}>
                     <div>
                       <h2>{question.description}</h2>
@@ -64,7 +65,6 @@ class Tests extends Component {
               sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
               con = parseInt(document.querySelector('input[name = "con"]:checked').value);
               ifstate = parseInt(document.querySelector('input[name = "ifstate"]:checked').value);
-
               result = variable + sub + con + ifstate;
               document.getElementById("grade").innerHTML = result;
               return false; 
