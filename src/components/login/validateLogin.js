@@ -13,6 +13,7 @@ export default function validateLogin(values) {
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
     errors.email = "Email address is invalid";
   }
+
   const passwordRegex = /(?= .*[0-9])/;
 
   if (!values.password) {
@@ -22,6 +23,5 @@ export default function validateLogin(values) {
   } else if (passwordRegex.test(values.password)) {
     errors.password = "Invalid password. Must Contain one number";
   }
-
   return errors;
 }

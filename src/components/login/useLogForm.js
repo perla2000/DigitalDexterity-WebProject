@@ -31,21 +31,21 @@ const useLogForm = (callback, validate) => {
     }
   }, [errors]);
 
-  //   this.handleLogin = this.handleLogin.bind(this)
+  //   this.handleLogin = this.handleLogin.bind(this);
 
-  //   const handleLogin(path) => {
-  //     if (this.values.username == "admin" && this.values.password== "admin") {
-  //         this.props.history.push(path)
+  //   handleLogin((path) => {
+  //     if (this.values.username == "admin" && this.values.password == "admin") {
+  //       this.props.history.push(path);
   //       setErrors(validate(values));
   //       setIsSubmitting(true);
   //     }
-  //     // else if (values.username != "admin" && values.password != "admin") {
-  //     //   setErrors(validate(values));
-  //     //   setIsSubmitting(true);
-  //     // } else {
-  //     //   setErrors(validate(values));
-  //     // }
-  //   };
+  //   });
+  // else if (values.username != "admin" && values.password != "admin") {
+  //   setErrors(validate(values));
+  //   setIsSubmitting(true);
+  // } else {
+  //   setErrors(validate(values));
+  // }
   return { handleChange, handleSubmit, values, errors };
 };
 
