@@ -1,29 +1,34 @@
 import React, { Component } from "react";
 import Menu from "./components/HomePhotos.js";
-import SectionLogin from "./components/login.js";
+import SectionLogin from "./components/login/login.js";
 import Navv from "./components/Navv.js";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Carousel from "./components/Carousel.js";
-import Login from "./components/login.js";
 import Footer from "./components/Footer.js";
-import Tests from "./components/Tests.js";
+import Tests from "./components/test/Tests.js";
 import Register from "./components/Register.js";
 import Welcome from "./components/WelcomePage.js";
-import ExcelTest from "./components/ExcelTest.js";
-import PPTests from "./components/PPTests.js";
+import ExcelTest from "./components/test/ExcelTest.js";
+import PPTests from "./components/test/PPTests.js";
 import Trying from "./components/Trying.js";
 import Profile from "./components/Profile.js";
+
 import AdminPage from "./components/adminPage.js";
+
+import FormSignup from "./components/login/FormSignup";
+import Form from "./components/login/Form";
+import LogForm from "./components/login/LogForm";
+
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-        <Navv/>
-        <AdminPage/>
+          <Navv />
+          <AdminPage />
         </div>
-        {/* <div className="App" style={{ objectFit: "cover" }}>
+    {/* <div className="App" style={{ objectFit: "cover" }}>
           {
             <div
               style={{
@@ -39,10 +44,10 @@ class App extends Component {
                   <Welcome />
                 </Route>
                 <Route exact path="/login">
-                  <SectionLogin />
+                  <LogForm />
                 </Route>
                 <Route exact path="/register">
-                  <Register />
+                  <Form />
                 </Route>
                 <Route exact path="/home">
                   <div>
@@ -69,7 +74,7 @@ class App extends Component {
               </Switch>
             </div>
           }
-        </div> */}
+        </div>  */}
       </Router>
     );
   }

@@ -41,8 +41,6 @@ class Navv extends Component {
               </NavLink>
             </NavItem>
 
-            
-
             <NavItem className="mt-0 ">
               <NavLink className="nav-link" to="/github">
                 <NavLink href="https://github.com/reactstrap/reactstrap">
@@ -63,7 +61,7 @@ class Navv extends Component {
                   <Link to="/test">Microsoft Excel Test</Link>
                 </DropdownItem>
                 <DropdownItem>
-                  <Link to="/test">Microsoft Powerpoint Test</Link>
+                  <Link to="/test?t=powerpoint">Microsoft Powerpoint Test</Link>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

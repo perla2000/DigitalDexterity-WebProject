@@ -29,8 +29,9 @@ const AdminPage = () => {
                 (answer) => (
                   <td>{answer[0]}</td>
                 )
-                //   {if ({answer[1]}==true){<td>{answer[1]}</td>}}
               )}
+              <td>{question.answers.filter(a=>a[1]==true)[0]}</td>
+              
             </tr>
           </tbody>
         ))}

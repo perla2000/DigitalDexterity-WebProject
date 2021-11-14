@@ -23,7 +23,7 @@ body {
 
 .wrapper .left {
   width: 20%;
-  background: linear-gradient(to top, #111111, #757475, #ffffff);
+  background: linear-gradient(to top, rgb(0, 157, 255) 0%, rgb(0, 0, 0) 100%);
   padding: 30px 25px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;

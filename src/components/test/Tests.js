@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Tests.css";
- 
+import Object from "../../shared/object";
 
 class Tests extends Component {
   constructor(props) {
