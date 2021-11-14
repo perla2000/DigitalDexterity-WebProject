@@ -18,7 +18,7 @@ export default function validateLogin(values) {
 
   if (!values.password) {
     errors.password = "Password is required";
-  } else if (values.password.length < 6) {
+  } else if (values.password.length < 5) {
     errors.password = "Password needs to be 6 characters or more";
   } else if (passwordRegex.test(values.password)) {
     errors.password = "Invalid password. Must Contain one number";

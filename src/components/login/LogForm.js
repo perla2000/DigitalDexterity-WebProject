@@ -5,6 +5,10 @@ import Trying from "../Trying";
 import { Container } from "reactstrap";
 import Carousel from "../Carousel.js";
 import Footer from "../Footer.js";
+import Navv from "../Navv";
+import Nav2 from "../Nav2";
+import useLogForm from "./useLogForm";
+import { Redirect } from "react-router";
 
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -15,18 +19,24 @@ const Form = () => {
   return (
     <>
       {!isSubmitted ? (
-        <div className="form-container">
-          <span className="close-btn">×</span>
-          <div className="form-content-left">
-            <img className="form-img" src="assets/auth2.png" />
+        <>
+          <Nav2 />
+          <div className="form-container">
+            <span className="close-btn">×</span>
+            <div className="form-content-left">
+              <img className="form-img" src="assets/login2.png" />
+            </div>
+            <FormLogin submitForm={submitForm} />
           </div>
-          <FormLogin submitForm={submitForm} />
-        </div>
+        </>
       ) : (
-        <div>
+        <div className="container-center">
+          if (values.username=="admin" && values.password=="admin"){" "}
+          {Redirect("/admin")}
+          {/* <Navv />
           <Carousel />
           <Trying />
-          <Footer />
+          <Footer /> */}
         </div>
       )}
     </>

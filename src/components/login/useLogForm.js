@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useHistory, Redirect, withRouter } from "react-router-dom";
+import AdminPage from "../adminPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const useLogForm = (callback, validate) => {
   const [values, setValues] = useState({
@@ -19,6 +21,11 @@ const useLogForm = (callback, validate) => {
   };
 
   const handleSubmit = (e) => {
+    if (values.username == "admin" && values.password == "admin") {
+      Redirect("/admin");
+    } else {
+      Redirect("/home");
+    }
     e.preventDefault();
 
     setErrors(validate(values));
