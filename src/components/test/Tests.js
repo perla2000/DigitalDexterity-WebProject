@@ -27,31 +27,33 @@ class Tests extends Component {
             </div>
 
             <form id="form1">
-              <fieldset>
-                {this.state.Object.Powerpoint.questions.map((question) => (
-                  //every element in react requires a key for updates
+              <div>
+                <fieldset>
+                  {this.state.Object.Powerpoint.questions.map((question, j) => (
+                    //every element in react requires a key for updates
 
-                  <div style={{ marginTop: "50px" }} key={question.id}>
-                    <div>
-                      <h2>{question.description}</h2>
-                      {question.answers.map((answer) => (
-                        <label for="overtype">
-                          <input
-                            type="radio"
-                            name="variable"
-                            value="0"
-                            id="overtype"
-                          />
-                          {answer[0]}
-                        </label>
-                      ))}
+                    <div style={{ marginTop: "50px" }} key={question.id}>
+                      <div>
+                        <h2>{question.description}</h2>
+                        {question.answers.map((answer) => (
+                          <label for="overtype">
+                            <input
+                              type="radio"
+                              name={j}
+                              value="0"
+                              id="overtype"
+                            />
+                            {answer[0]}
+                          </label>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
-                <button onClick="returnScore()" type="submit" value="Submit">
-                  Submit
-                </button>
-              </fieldset>
+                  ))}
+                  <button onClick="returnScore()" type="submit" value="Submit">
+                    Submit
+                  </button>
+                </fieldset>
+              </div>
             </form>
           </div>
           {/* <p>

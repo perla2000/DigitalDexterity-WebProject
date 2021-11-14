@@ -27,16 +27,25 @@ const AdminPage = () => {
     newFormData[fieldName] = fieldValue;
     setAddFormData(newFormData);
   };
-  console.log()
+  console.log();
   const handleAddFormSubmit = (event) => {
     event.preventDefault();
     const newQuestion = {
       id: nanoid(),
       description: addFormData.question,
       answers: [
-        [addFormData.answer1, addFormData.answer1 === addFormData.correctAnswer],
-        [addFormData.answer2, addFormData.answer2 === addFormData.correctAnswer],
-        [addFormData.answer3, addFormData.answer3 === addFormData.correctAnswer],
+        [
+          addFormData.answer1,
+          addFormData.answer1 === addFormData.correctAnswer,
+        ],
+        [
+          addFormData.answer2,
+          addFormData.answer2 === addFormData.correctAnswer,
+        ],
+        [
+          addFormData.answer3,
+          addFormData.answer3 === addFormData.correctAnswer,
+        ],
       ],
       // question:addFormData.question,
       // answer1:addFormData.answer1,
@@ -76,9 +85,10 @@ const AdminPage = () => {
         ))}
       </table>
 
-      <h2>Add a question</h2>
-      <form onSubmit={handleAddFormSubmit}>
+      <h2 class="h">Add a question</h2>
+      <form class="hello" onSubmit={handleAddFormSubmit}>
         <input
+          class="i"
           type="text"
           name="question"
           required="required"
@@ -88,6 +98,7 @@ const AdminPage = () => {
         />
 
         <input
+          class="i"
           type="text"
           required="required"
           placeholder="Enter an answer..."
@@ -97,6 +108,7 @@ const AdminPage = () => {
         />
 
         <input
+          class="i"
           type="text"
           required="required"
           placeholder="Enter an answer ..."
@@ -106,6 +118,7 @@ const AdminPage = () => {
         />
 
         <input
+          class="i"
           type="text"
           required="required"
           placeholder="Enter an answer..."
@@ -114,6 +127,7 @@ const AdminPage = () => {
           onChange={handleAddFormChange}
         />
         <input
+          class="i"
           type="text"
           required="required"
           placeholder="Enter an answer..."
@@ -121,12 +135,11 @@ const AdminPage = () => {
           value={addFormData.correctAnswer}
           onChange={handleAddFormChange}
         />
-
-        <button type="submit">Add</button>
         {/* <button type="button" onClick={handleCancelClick}>
           Cancel
         </button> */}
       </form>
+      <button type="submit">+</button>
     </div>
   );
 };

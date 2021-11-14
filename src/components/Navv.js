@@ -35,10 +35,8 @@ class Navv extends Component {
             </NavItem>
 
             <NavItem className="mt-0 ">
-              <NavLink className="nav-link" to="/github">
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  Test
-                </NavLink>
+              <NavLink className="nav-link" to="">
+                <NavLink href="/test">Test</NavLink>
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar className="mt-2 ">
