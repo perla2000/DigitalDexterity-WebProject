@@ -1,10 +1,10 @@
 .form-container {
   margin: 90px auto;
-  width: 1200px;
+  width: 1300px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
-  height: 700px;
+  height: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -48,7 +48,7 @@
   font-style: italic;
   font-size: 24px;
   margin-top: 80px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .form-content-right {
@@ -160,6 +160,7 @@
 
 .form-input-login a {
   text-decoration: none;
-  color: #27cdff;
+  color: rgb(49, 107, 155);
+  font-size: 20px;
   font-weight: 600;
 }

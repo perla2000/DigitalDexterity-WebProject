@@ -33,13 +33,6 @@ class Navv extends Component {
                 </NavLink>
               </NavLink>
             </NavItem>
-            <NavItem className="mt-0 ">
-              <NavLink className="nav-link" to="/github">
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
-              </NavLink>
-            </NavItem>
 
             <NavItem className="mt-0 ">
               <NavLink className="nav-link" to="/github">
