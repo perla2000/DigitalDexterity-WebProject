@@ -69,21 +69,35 @@ function SectionCarousel() {
         className="section pt-o"
         id="carousel"
         style={{
-          background:"linear-gradient(to top, rgb(0, 157, 255) 0%, rgb(0, 0, 0) 100%)",
+          background:
+            "linear-gradient(to top, rgb(0, 157, 255) 0%, rgb(0, 0, 0) 100%)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           height: 550,
-          color: "white",
-          fontSize:"30px",
-          fontFamily:"times",
-          justifyContent:"center",
-          textAlign:"center",
-          
-          
         }}
-      > 
-      <p>"It is not the strongest of the species that survives, nor the most intelligent that survives. It is the one that is the most adaptable to change.” — CHARLES DARWIN" </p></div>
-       {/* <div class="container-fluid">
+      >
+        <div
+          style={{
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            height: 550,
+            color: "black",
+            fontSize: "30px",
+            fontFamily: "times",
+            textAlign: "center",
+
+            padding: "15px",
+            position: "absolute",
+            top: "30%",
+          }}
+        >
+          {" "}
+          "It is not the strongest of the species that survives, nor the most
+          intelligent that survives. It is the one that is the most adaptable to
+          change.”   CHARLES DARWIN"
+        </div>
+
+        {/* <div class="container-fluid">
           <Row>
             <Col style={{ backgroundSize: "cover" }}>
               <Card className="page-carousel">
@@ -149,10 +163,8 @@ function SectionCarousel() {
             </Col>
           </Row>
         </div> */}
-
-    
+      </div>{" "}
     </>
-
   );
 }
 
