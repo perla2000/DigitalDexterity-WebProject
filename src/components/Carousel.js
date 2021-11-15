@@ -81,11 +81,10 @@ function SectionCarousel() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             height: 550,
-            color: "black",
-            fontSize: "30px",
+            color: "rgb(205, 235, 253)",
+            fontSize: "45px",
             fontFamily: "times",
             textAlign: "center",
-
             padding: "15px",
             position: "absolute",
             top: "30%",
@@ -94,7 +93,7 @@ function SectionCarousel() {
           {" "}
           "It is not the strongest of the species that survives, nor the most
           intelligent that survives. It is the one that is the most adaptable to
-          change.”   CHARLES DARWIN"
+          change."  <br /> CHARLES DARWIN
         </div>
 
         {/* <div class="container-fluid">

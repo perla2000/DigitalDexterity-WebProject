@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Tests.css";
-import timerGame from "../timer.js"
- 
+import timerGame from "../timer.js";
+
 import Object from "../../shared/object";
 
 class Tests extends Component {
@@ -15,8 +15,8 @@ class Tests extends Component {
     return (
       <html>
         <body>
-            <timerGame/>
-         
+          <timerGame />
+
           <div class="main">
             <div class="header">
               <h1

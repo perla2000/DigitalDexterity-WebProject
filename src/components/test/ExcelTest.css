@@ -6,10 +6,9 @@
 .main {
   width: 80%;
   max-width: 100%;
-  margin-left:20%;
+  margin-left: 20%;
   padding: 30px 30px;
   background-color: rgb(255, 255, 255);
-
 }
 
 .header {
@@ -30,6 +29,7 @@ label {
   display: block;
   font-size: larger;
   color: black;
+  justify-items: center;
 }
 
 input {
@@ -41,8 +41,6 @@ button {
   width: 100px;
   margin-top: 40px;
   font-size: larger;
-  background-color: rgb(89, 124, 241);
-  color:white;
 }
 
 p {
