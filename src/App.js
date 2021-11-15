@@ -75,9 +75,9 @@ class App extends Component {
                     <Route exact path="/profile">
                       <Profile />
                     </Route>
-                    <Route exact path="/popup">
+                    {/* <Route exact path="/popup">
                       <PopUp />
-                    </Route>
+                    </Route> */}
                   </Switch>
                 </div>
               </div>

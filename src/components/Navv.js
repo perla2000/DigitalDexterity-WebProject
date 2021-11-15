@@ -34,24 +34,24 @@ class Navv extends Component {
               </NavLink>
             </NavItem>
 
-            {/* <NavItem className="mt-0 ">
+            <NavItem className="mt-0 ">
               <NavLink className="nav-link" to="">
                 <NavLink href="/popup">Test</NavLink>
               </NavLink>
-            </NavItem> */}
+            </NavItem>
+
             <UncontrolledDropdown nav inNavbar className="mt-2">
               <DropdownToggle nav caret>
-                Test Training
+                Trainings
               </DropdownToggle>
-              <DropdownMenu left>
-                <DropdownItem className="dropdown-item">
-                  {/* {" "} */}
-                  <Link to="/popup">Microsoft Word Test</Link>
+              <DropdownMenu right>
+                <DropdownItem className="dropdown-item col-12">
+                  <Link to="/test">Microsoft Word Test</Link>
                 </DropdownItem>
-                <DropdownItem className="dropdown-item">
+                <DropdownItem className="dropdown-item col-12">
                   <Link to="/extest">Microsoft Excel Test</Link>
                 </DropdownItem>
-                <DropdownItem className="dropdown-item">
+                <DropdownItem className="dropdown-item col-12">
                   <Link to="/pptest?t=powerpoint">
                     Microsoft Powerpoint Test
                   </Link>

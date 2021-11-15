@@ -14,14 +14,15 @@ body {
   position: absolute;
   top: 30%;
   left: 42%;
-  zoom: 1.5;
+  /* zoom: 1.5; */
 }
 
 button {
   border-radius: 10px;
-  background-color: grey;
+  background-color: rgb(0, 0, 0);
   outline: none;
   width: auto;
+  font-size: 30px;
 }
 
 button:hover {

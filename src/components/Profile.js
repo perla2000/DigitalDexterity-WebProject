@@ -18,7 +18,7 @@ class Profile extends Component {
             <div class="info_data">
               <div class="data">
                 <h4>Email</h4>
-                <p>alex@gmail.com</p>
+                <p>lynn@gmail.com</p>
               </div>
               <div class="data">
                 <h4>Phone</h4>

@@ -104,7 +104,7 @@ ul {
 
 .dropdown-item * {
   display: block;
-  width: 100%;
+  /* width: 100%; */
   clear: both;
   font-weight: 400;
   color: #212529;
@@ -112,5 +112,5 @@ ul {
   background-color: transparent;
   border: 0;
   font-size: 30px;
-  margin-left: auto;
+  margin-left: -50%;
 }
