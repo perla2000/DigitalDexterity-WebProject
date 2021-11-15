@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-export default class PopUp extends Component {
+class PopUp extends Component {
   handleClick = () => {
     this.props.toggle();
-
   };
 
   render() {
@@ -20,10 +19,14 @@ export default class PopUp extends Component {
               <input type="text" name="name" />
             </label>
             <br />
-            <input type="submit" />
+            <button className="btn-pop" type="submit">
+              Start test
+            </button>
+            {/* <input type="submit" /> */}
           </form>
         </div>
       </div>
     );
   }
 }
+export default PopUp;

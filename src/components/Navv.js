@@ -46,7 +46,7 @@ class Navv extends Component {
               <DropdownMenu left>
                 <DropdownItem className="dropdown-item">
                   {/* {" "} */}
-                  <Link to="/test">Microsoft Word Test</Link>
+                  <Link to="/popup">Microsoft Word Test</Link>
                 </DropdownItem>
                 <DropdownItem className="dropdown-item">
                   <Link to="/extest">Microsoft Excel Test</Link>

@@ -19,6 +19,8 @@ import Form from "./components/login/Form";
 import LogForm from "./components/login/LogForm";
 import Nav2 from "./components/Nav2.js";
 import { Nav } from "reactstrap";
+import PopUp from "./components/PopUp.js";
+import PopUpshow from "./components/PopUpshow.js";
 
 class App extends Component {
   render() {
@@ -69,6 +71,9 @@ class App extends Component {
                     </Route>
                     <Route exact path="/test">
                       <Tests />
+                    </Route>
+                    <Route exact path="/popup">
+                      <PopUpshow />
                     </Route>
                     <Route exact path="/profile">
                       <Profile />

@@ -1,15 +1,16 @@
 import React from "react";
 import PopUp from "./PopUp";
-import "./styles.css"
+import "./styles.css";
+import Tests from "./test/Tests";
 
-export default class App extends React.Component {
+class PopUpshow extends React.Component {
   state = {
-    seen: false
+    seen: false,
   };
 
   togglePop = () => {
     this.setState({
-      seen: !this.state.seen
+      seen: !this.state.seen,
     });
   };
 
@@ -17,10 +18,12 @@ export default class App extends React.Component {
     return (
       <div>
         <div className="btn" onClick={this.togglePop}>
-          <button >New User?</button>
+          <button>Start Test</button>
         </div>
-        {this.state.seen ? <PopUp toggle={this.togglePop} /> : null}
+        {!this.state.seen ? <PopUp toggle={this.togglePop} /> : <Tests />}
       </div>
     );
   }
 }
+
+export default PopUpshow;
