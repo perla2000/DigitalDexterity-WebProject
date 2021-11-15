@@ -9,7 +9,7 @@ class Profile extends Component {
       <div class="wrapper">
         <div class="left">
           <img src="assets/profile.png" alt="user" width="200" height="250" />
-          <h4>Alex William</h4>
+          <h4>Lynn William</h4>
           <p>UI Developer</p>
         </div>
         <div class="right">

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Tests.css";
-import timerGame from "../timer.js";
 
 import Object from "../../shared/object";
 
@@ -15,8 +14,6 @@ class Tests extends Component {
     return (
       <html>
         <body>
-          <timerGame />
-
           <div class="main">
             <div class="header">
               <h1
@@ -25,13 +22,13 @@ class Tests extends Component {
                   marginTop: "80px",
                 }}
               >
-                {this.state.Object.Powerpoint.quizTitle}
+                {this.state.Object.Word.quizTitle}
               </h1>
             </div>
             <form id="form1">
               <div>
                 <fieldset>
-                  {this.state.Object.Powerpoint.questions.map((question, j) => (
+                  {this.state.Object.Word.questions.map((question, j) => (
                     //every element in react requires a key for updates
 
                     <div style={{ marginTop: "50px" }} key={question.id}>
@@ -40,6 +37,7 @@ class Tests extends Component {
                         {question.answers.map((answer) => (
                           <label for="overtype">
                             <input
+                              className="rdbuttons"
                               type="radio"
                               name={j}
                               value="0"

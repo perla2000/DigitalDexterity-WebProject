@@ -118,7 +118,7 @@ const Object = {
         ],
       },
     ],
-    quizTitle: "Word",
+    quizTitle: "Test your knowledge in Powerpoint",
   },
   Excel: {
     questions: [
@@ -211,8 +211,149 @@ const Object = {
         ],
       },
     ],
-    quizTitle: "Test your knowledge in EXCEL",
+    quizTitle: "Test your knowledge in Excel",
   },
+  Word: {
+    questions: [
+      {
+        id: 0,
+        description:
+          "You place the insertion point in the middle of a paragraph and start typing. But the new text deletes existing text. What's the problem and how do you fix it?",
+        answers: [
+          ["Word is in Overtype mode. Press BACKSPACE and retype.", false],
+          ["The DELETE key is pressed in. Press DELETE again..", true],
+          [
+            "Word is in Overtype mode. Press INSERT to turn it off.",
+            false,
+          ],
+        ],
+      },
+      {
+        id: 1,
+        description:
+          "Once you've deleted the text, you can't get it back.",
+        answers: [
+          ["True.", false],
+          ["False", true],
+          [
+            "",
+            false,
+          ],
+        ],
+      },
+      {
+        id: 2,
+        description:
+          "As you type a paragraph, press ENTER to move from one line to the next.",
+        answers: [
+          ["True.", false],
+          ["False", true],
+          [
+            "",
+            false,
+          ],
+        ],
+      },
+      {
+        id: 3,
+        description:
+          "The best way to create a heading in a document is to:",
+        answers: [
+          ["Apply a larger font size to it than the body text.", false],
+          ["Add bold formatting by clicking the Bold button on the Formatting toolbar.", true],
+          [
+            "Apply a heading style.",
+            false,
+          ],
+        ],
+      },
+      {
+        id:4,
+        description:
+          "How do you open the Header and Footer toolbar?",
+        answers: [
+          ["On the View menu, click Toolbars, and select Header and Footer from the list of toolbars.", false],
+          ["On the View menu, click Header and Footer.", true],
+          [
+            "Right–click any toolbar and click Header and Footer.",
+            false,
+          ],
+        ],
+      },
+      {
+        id: 5,
+        description:
+          "Which keyboard shortcut bolds selected text?",
+        answers: [
+          [" Ctrl+B", false],
+          ["Alt+B", true],
+          [
+            "None of the above.",
+            false,
+          ],
+        ],
+      },
+      {
+        id: 6,
+        description:
+          "Suddenly the Word does not display your favorite toolbar. What has happened?",
+        answers: [
+          ["Your program has been infected by a macro virus.", false],
+          ["Your toolbar has been unchecked under the View/Toolbars menu.", true],
+          [
+            "Your toolbar option has been deleted from the menus.",
+            false,
+          ],
+        ],
+      },
+      {
+        id: 6,
+        description:
+          "Suddenly the Word does not display your favorite toolbar. What has happened?",
+        answers: [
+          ["Your program has been infected by a macro virus.", false],
+          ["Your toolbar has been unchecked under the View/Toolbars menu.", true],
+          [
+            "Your toolbar option has been deleted from the menus.",
+            false,
+          ],
+        ],
+      },
+      {
+        id: 7,
+        description:
+          "How many different documents can you have open at one time?",
+        answers: [
+          ["No more than three.", false],
+          ["Only one.", true],
+          [
+            "As many as your computer memory will hold.",
+            false,
+          ],
+        ],
+      },
+      {
+        id: 7,
+        description:
+          "How many margins are on a page?",
+        answers: [
+          ["Two (header and footer).", false],
+          ["Four (top, bottom, right, left).", true],
+          [
+            "Two (landscape and Portrait).",
+            false,
+          ],
+        ],
+      },
+      
+
+      
+
+
+    
+    ],
+    quizTitle: "Test your knowledge in Word",
+    },
 };
 
 export default Object;

@@ -36,7 +36,7 @@ class Navv extends Component {
 
             {/* <NavItem className="mt-0 ">
               <NavLink className="nav-link" to="">
-                <NavLink href="/test">Test</NavLink>
+                <NavLink href="/popup">Test</NavLink>
               </NavLink>
             </NavItem> */}
             <UncontrolledDropdown nav inNavbar className="mt-2">

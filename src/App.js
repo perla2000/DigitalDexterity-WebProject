@@ -26,10 +26,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        {/* <div>
-          <Navv />
-          <AdminPage />
-        </div> */}
+        {/* <PopUpshow/> */}
         {
           <div className="App" style={{ objectFit: "cover" }}>
             {
@@ -77,6 +74,9 @@ class App extends Component {
                     </Route>
                     <Route exact path="/profile">
                       <Profile />
+                    </Route>
+                    <Route exact path="/popup">
+                      <PopUp />
                     </Route>
                   </Switch>
                 </div>
