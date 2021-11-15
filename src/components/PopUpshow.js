@@ -20,11 +20,14 @@ class PopUpshow extends React.Component {
   render() {
     return (
       <div
-        className="container"
+        className="container-fluid"
         style={{
           background:
             "linear-gradient(to top, rgb(0, 157, 255) 0%, rgb(0, 0, 0) 100%)",
+          position: "absolute",
+          width: "100%",
           height: "100%",
+          objectFit: "cover",
         }}
       >
         <div className="row justify-content-center">
@@ -33,13 +36,17 @@ class PopUpshow extends React.Component {
               style={{
                 width: "100%",
                 height: "50px",
-                color: "black",
-                fontSize: "30px",
+                color: "white",
+                fontSize: "40px",
                 marginTop: "30%",
+                marginLeft: "400px",
               }}
             >
               Insert code:
-              <input style={{ width: "60%" }} type="text" name="name" />
+              <br />
+              <br />
+              <br />
+              <input style={{ width: "80%" }} type="text" name="name" />
             </label>
             <br />
             <button onClick={this.togglePop}>Start Test</button>
