@@ -8,7 +8,7 @@ class Profile extends Component {
     return (
       <div class="wrapper">
         <div class="left">
-          <img src="assets/impact.png" alt="user" width="200" height="250" />
+          <img src="assets/profile.png" alt="user" width="200" height="250" />
           <h4>Alex William</h4>
           <p>UI Developer</p>
         </div>
