@@ -22,15 +22,15 @@ const useLogForm = (callback, validate) => {
 
   const handleSubmit = (e) => {
     // history.push("/admin");
-    if (values.username === "admin" && values.password === "admin") {
-      <Redirect to={{ pathname: "/admin" }} />;
-    }
+    // if (values.username === "admin" && values.password === "admin") {
+    //   <Redirect to={{ pathname: "/admin" }} />;
+    // }
 
     e.preventDefault();
 
     setErrors(validate(values));
     setIsSubmitting(true);
-    <Redirect to="/home" />;
+    // <Redirect to="/home" />;
   };
 
   useEffect(() => {
