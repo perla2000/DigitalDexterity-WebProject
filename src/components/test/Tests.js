@@ -35,9 +35,8 @@ class Tests extends Component {
                       <div>
                         <h2>{question.description}</h2>
                         {question.answers.map((answer) => (
-                          <label for="overtype">
+                          <label class="label" for="overtype">
                             <input
-                              className="rdbuttons"
                               type="radio"
                               name={j}
                               value="0"

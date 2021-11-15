@@ -1,7 +1,5 @@
-
 import React, { Component } from "react";
 import "./Tests.css";
-
 
 import Object from "../../shared/object";
 
@@ -16,8 +14,6 @@ class PPTests extends Component {
     return (
       <html>
         <body>
-        
-
           <div class="main">
             <div class="header">
               <h1
@@ -39,9 +35,8 @@ class PPTests extends Component {
                       <div>
                         <h2>{question.description}</h2>
                         {question.answers.map((answer) => (
-                          <label for="overtype">
+                          <label class="label" for="overtype">
                             <input
-                            className="rdbuttons"
                               type="radio"
                               name={j}
                               value="0"
