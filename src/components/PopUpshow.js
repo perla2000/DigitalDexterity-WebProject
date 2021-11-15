@@ -1,6 +1,6 @@
 import React from "react";
 import PopUp from "./PopUp";
-import "./styles.css"
+// import "./styles.css"
 
 export default class App extends React.Component {
   state = {

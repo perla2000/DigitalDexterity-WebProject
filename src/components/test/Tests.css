@@ -40,7 +40,12 @@ input {
 button {
   width: 100px;
   margin-top: 40px;
-  font-size: larger;
+  font-size: "10px";
+  color:white;
+  width:"30px"
+}
+input{
+  color:"black";
 }
 
 p {

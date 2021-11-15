@@ -19,15 +19,13 @@ import Form from "./components/login/Form";
 import LogForm from "./components/login/LogForm";
 import Nav2 from "./components/Nav2.js";
 import { Nav } from "reactstrap";
-
+import PopUpshow from "./components/PopUpshow.js";
+import PopUp from "./components/PopUp.js"
 class App extends Component {
   render() {
     return (
       <Router>
-        {/* <div>
-          <Navv />
-          <AdminPage />
-        </div> */}
+  {/* <PopUpshow/> */}
         {
           <div className="App" style={{ objectFit: "cover" }}>
             {
@@ -72,6 +70,9 @@ class App extends Component {
                     </Route>
                     <Route exact path="/profile">
                       <Profile />
+                    </Route>
+                    <Route exact path="/popup">
+                      <PopUp />
                     </Route>
                   </Switch>
                 </div>
