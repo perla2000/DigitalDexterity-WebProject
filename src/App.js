@@ -21,13 +21,14 @@ import Nav2 from "./components/Nav2.js";
 import { Nav } from "reactstrap";
 import PopUp from "./components/PopUp.js";
 import PopUpshow from "./components/PopUpshow.js";
+import Database from "./components/test/testdatabase.js"
 
 class App extends Component {
   render() {
     return (
       <Router>
-        {/* <PopUpshow/> */}
-        {
+        <Database/>
+      {/* {
           <div className="App" style={{ objectFit: "cover" }}>
             {
               <div
@@ -75,15 +76,13 @@ class App extends Component {
                     <Route exact path="/profile">
                       <Profile />
                     </Route>
-                    {/* <Route exact path="/popup">
-                      <PopUp />
-                    </Route> */}
+
                   </Switch>
                 </div>
               </div>
             }
           </div>
-        }
+        } */}
       </Router>
     );
   }
