@@ -21,14 +21,18 @@ import Nav2 from "./components/Nav2.js";
 import { Nav } from "reactstrap";
 import PopUp from "./components/PopUp.js";
 import PopUpshow from "./components/PopUpshow.js";
-import Database from "./components/test/testdatabase.js"
+import Database from "./components/test/testdatabase.js";
+import Timer from "./components/timer.js";
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Database/>
-      {/* {
+        {/* <div>
+          <Timer />
+          <Database />
+        </div> */}
+        {
           <div className="App" style={{ objectFit: "cover" }}>
             {
               <div
@@ -68,7 +72,10 @@ class App extends Component {
                       <ExcelTest />
                     </Route>
                     <Route exact path="/test">
-                      <Tests />
+                      <div>
+                        <Timer />
+                        <Tests />
+                      </div>
                     </Route>
                     <Route exact path="/popup">
                       <PopUpshow />
@@ -76,13 +83,12 @@ class App extends Component {
                     <Route exact path="/profile">
                       <Profile />
                     </Route>
-
                   </Switch>
                 </div>
               </div>
             }
           </div>
-        } */}
+        }
       </Router>
     );
   }
