@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useHistory, Redirect, withRouter } from "react-router-dom";
 import AdminPage from "../adminPage";
+import history from "./history";
 
 const useLogForm = (callback, validate) => {
   // const history = useHistory();
@@ -22,15 +23,18 @@ const useLogForm = (callback, validate) => {
 
   const handleSubmit = (e) => {
     // history.push("/admin");
-    // if (values.username === "admin" && values.password === "admin") {
-    //   <Redirect to={{ pathname: "/admin" }} />;
-    // }
-
-    e.preventDefault();
-
-    setErrors(validate(values));
+    if (values.username == "admin" && values.password == "admin" && values.email == "admin@gmail.com") {
+  
+      history.push("/admin");
+    }else{
+      setErrors(validate(values));
     setIsSubmitting(true);
-    // <Redirect to="/home" />;
+    e.preventDefault();
+    }
+
+
+    
+    
   };
 
   useEffect(() => {

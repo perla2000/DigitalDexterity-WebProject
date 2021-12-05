@@ -13,6 +13,20 @@ class Database extends Component {
       Object,
     };
   }
+
+  returnScore() {
+    var score = 0;
+    for(var i=0; i<AnswerQuestion.length; ++i) {
+      var ele = document.getElementsByName(AnswerQuestion[i].idAnswerQuestion);
+      for(var j=0; j<ele.length; ++j) {
+        if (ele[j].checked && ele[j].id == AnswerQuestion[i].correcte) {
+          score += 1;
+        }
+      }
+    }
+    alert("your score is " + score);
+  }
+
   render() {
     return (
       <html>
@@ -42,16 +56,16 @@ class Database extends Component {
                               type="radio"
                               name= {a.idAnswerQuestion}
                               value="0"
-                              id="overtype"
+                              id={a.idAnswer}
                             />
                             {a.description}
-                          </label>))};
+                          </label>))}
                           </div>
                     </div>
                           ))}
                      
                 
-                  <button onClick="returnScore()" type="submit" value="Submit">
+                  <button onClick={() => this.returnScore()} type="submit" value="Submit">
                     Submit
                   </button>
                 </fieldset>

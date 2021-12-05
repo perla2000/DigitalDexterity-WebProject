@@ -40,6 +40,19 @@ class Profile extends Component {
               </div>
             </div>
           </div>
+          <div class="projects">
+            <h3>Tests</h3>
+            <div class="projects_data">
+              <div class="data">
+                <h4>Recent</h4>
+                <p>Grade over 20:</p>
+              </div>
+              <div class="data">
+              <br/>
+                <p>dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -92,7 +92,7 @@ ul {
 }
 .center {
   color: white;
-
+  
   padding: 15px;
   position: absolute;
   top: 50%;
@@ -102,9 +102,9 @@ ul {
   transform: translate(-50%, -50%);
 }
 
-.dropdown-item * {
+/* .dropdown-item * {
   display: block;
-  /* width: 100%; */
+  width: 100%;
   clear: both;
   font-weight: 400;
   color: #212529;
@@ -113,4 +113,4 @@ ul {
   border: 0;
   font-size: 30px;
   margin-left: -50%;
-}
+} */

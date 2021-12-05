@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Menu from "./components/HomePhotos.js";
-import SectionLogin from "./components/login/login.js";
+
 import Navv from "./components/Navv.js";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -19,7 +19,7 @@ import Form from "./components/login/Form";
 import LogForm from "./components/login/LogForm";
 import Nav2 from "./components/Nav2.js";
 import { Nav } from "reactstrap";
-import PopUp from "./components/PopUp.js";
+
 import PopUpshow from "./components/PopUpshow.js";
 import Database from "./components/test/testdatabase.js";
 import Timer from "./components/timer.js";
@@ -74,7 +74,7 @@ class App extends Component {
                     <Route exact path="/test">
                       <div>
                         <Timer />
-                        <Tests />
+                        <Database/>
                       </div>
                     </Route>
                     <Route exact path="/popup">
