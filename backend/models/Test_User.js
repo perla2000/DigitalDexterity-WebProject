@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var Test_User_schema = new Schema({
-  note: {
+  note_test: {
     type: Number,
     // required: true,
   },

@@ -13,6 +13,10 @@ var Test_Answers_schema = new Schema({
   Date_rendue: {
     type: Number,
   },
+  // Note_question: {
+  //   type: Number,
+  //   required : true,     ?
+  // },
 });
 
 const Test_Answers = mongoose.model("test_answer", Test_Answers_schema);

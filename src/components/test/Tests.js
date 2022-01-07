@@ -49,12 +49,7 @@ class Tests extends Component {
                       </div>
                     </div>
                   ))}
-                  <button
-                    onClick="returnScore()"
-                    type="submit"
-                    value="Submit"
-                    ref={Trying}
-                  >
+                  <button onClick="returnScore()" type="submit" value="Submit">
                     Submit
                   </button>
                 </fieldset>

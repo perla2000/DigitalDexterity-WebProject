@@ -14,6 +14,10 @@ var Answer_Question_schema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "test_answer",
   },
+  CorrectAnswer: {
+    type: String,
+    required: true,
+  },
 });
 
 const Answer_Question = mongoose.model(
