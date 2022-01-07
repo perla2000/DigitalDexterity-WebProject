@@ -5,9 +5,7 @@ import { Tests } from "../shared/database.js";
 import { Users } from "../shared/database.js";
 import { Link } from "react-router-dom";
 
-//<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>;
-
-class AdminHome extends Component {
+class AdminUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -82,34 +80,28 @@ class AdminHome extends Component {
               <div class="data">
                 <br />
                 <div class="projects">
-                  <h3>Tests</h3>
-                  {Tests.map((t) => (
+                  <h3>Users</h3>
+                  {Users.map((u) => (
                     <div class="projects_data">
                       <div class="data">
-                        <div class="modify">
-                          <h4>{t.quizTitle}</h4>
-                        </div>
+                        <h4>{u.username}</h4>
                         <p>
-                          {TestUser.filter((tu) => tu.idTest == t.idTest).map(
-                            (tu) =>
-                              Users.filter((u) => u.id == tu.idUser).map(
-                                (u) => <p> {u.username}</p>
-                              )
-                          )}
+                          {Tests.map((t) => (
+                            <p> {t.quizTitle}</p>
+                          ))}
                         </p>
                       </div>
                       <div class="data">
                         <br />
-                        {TestUser.filter((tu) => tu.idTest == t.idTest).map(
-                          (tu) => (
-                            <p> {tu.date}</p>
-                          )
-                        )}
-                      </div>
-                      <div class="data" style={{ fontSize: "20px" }}>
-                        <Link to="/modAd" style={{ color: "black" }}>
-                          Modify Test
-                        </Link>
+                        <p>
+                          {" "}
+                          {TestUser.filter((tu) => tu.idUser == u.id).map(
+                            (tu) =>
+                              Tests.filter((t) => t.idTest == tu.idTest).map(
+                                (t) => <p> {tu.noteTest}</p>
+                              )
+                          )}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -123,4 +115,4 @@ class AdminHome extends Component {
   }
 }
 
-export default AdminHome;
+export default AdminUser;
