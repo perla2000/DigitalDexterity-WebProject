@@ -3,7 +3,8 @@ import Menu from "./components/HomePhotos.js";
 
 import Navv from "./components/Navv.js";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,withRouter } from "react-router-dom";
+import {connect} from "react-redux";
 import Carousel from "./components/Carousel.js";
 import Footer from "./components/Footer.js";
 import Tests from "./components/test/Tests.js";
@@ -23,10 +24,23 @@ import { Nav } from "reactstrap";
 import PopUpshow from "./components/PopUpshow.js";
 import Database from "./components/test/testdatabase.js";
 import Timer from "./components/timer.js";
-
+import {Provider} from'react-redux';
+import {ConfigureStore} from "./redux/configureStore";
+// const store=ConfigureStore();
+// const mapStateToProps=state=>{
+//   return {
+//     idTest: state.dishes,
+//     dateOuverture: state.dateOuverture,
+//     duree: state.duree,
+//     dateModification: dateModification.state,
+//     quizTitle: quizTitle.state,
+//   }
+// }
 class App extends Component {
+  
   render() {
     return (
+      // <Provider store={store}>
       <Router>
         {/* <div>
           <Timer />
@@ -71,10 +85,10 @@ class App extends Component {
                     <Route exact path="/extest">
                       <ExcelTest />
                     </Route>
-                    <Route exact path="/test">
+                    <Route exact path="/test" >
                       <div>
                         <Timer />
-                        <Database/>
+                        <Database />
                       </div>
                     </Route>
                     <Route exact path="/popup">
@@ -90,8 +104,10 @@ class App extends Component {
           </div>
         }
       </Router>
+      // </Provider>
     );
   }
 }
 
 export default App;
+//withRouter(connect(mapStateToProps)(App));

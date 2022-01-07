@@ -18,13 +18,38 @@ export const Users = [
     email: "marioboujaoudeh@gmail.com",
   },
 ];
+export const TestUser= [
+  {
+    idTestUser:0,
+    idUser:2,
+    idTest:1,
+    code:"cc",
+    date:"2/1/2022",
+    noteTest:10,
+  },
+  {
+    idTestUser:1,
+    idUser:2,
+    idTest:2,
+    code:"cc",
+    date:"2/1/2022",
+    noteTest:11,
+  },
+];
 export const Tests = [
  {
     idTest: 1,
     dateOuverture: 0,
     duree: 0,
     dateModification: 0,
-    quizTitle: "Test your knowledge in Powerpoint",
+    quizTitle: "Powerpoint",
+  },
+  {
+    idTest: 2,
+    dateOuverture: 0,
+    duree: 0,
+    dateModification: 0,
+    quizTitle: "Excel",
   },
 ];
 export const Questions = [
