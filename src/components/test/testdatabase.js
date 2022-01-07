@@ -14,23 +14,25 @@ class Database extends Component {
       Questions,
       Answers,
       AnswerQuestion,
+      score:0,
  
 
     };
   }
 
-  // returnScore() {
-  //   var score = 0;
-  //   for (var i = 0; i < AnswerQuestion.length; ++i) {
-  //     var ele = document.getElementsByName(AnswerQuestion[i].idAnswerQuestion);
-  //     for (var j = 0; j < ele.length; ++j) {
-  //       if (ele[j].checked && ele[j].id == AnswerQuestion[i].correcte) {
-  //         score += 1;
-  //       }
-  //     }
-  //   }
-  //   alert("your score is " + score);
-  // }
+  returnScore(event) {
+    var result=0;
+    for (var i = 0; i < AnswerQuestion.length; ++i) {
+      var ele = document.getElementsByName(AnswerQuestion[i].idAnswerQuestion);
+      for (var j = 0; j < ele.length; ++j) {
+        if (ele[j].checked && ele[j].id == AnswerQuestion[i].correcte) {
+          result += 1;
+        }
+      }
+    }
+    this.setState({score:result})
+    event.preventDefault();
+  };
 
   render() {
     return (
@@ -69,7 +71,7 @@ class Database extends Component {
                                 {a.description}
                               </label>
                             ))}
-                          ;
+
                         </div>
                       </div>
                     ))}
@@ -78,6 +80,7 @@ class Database extends Component {
                     onClick={() => this.returnScore()}
                     type="submit"
                     value="Submit"
+                    
                   >
                     Submit
                   </button>
@@ -86,11 +89,11 @@ class Database extends Component {
             </form>
           </div>
          <p>
-            Your grade is: <span id="grade">__</span>
+            Your grade is: <span id="grade">{this.state.score}</span>
           </p>
           <p id="grade2"></p> 
          <script>
-
+            
         </script> 
         </body>
       </html>

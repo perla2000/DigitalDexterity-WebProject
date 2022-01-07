@@ -94,32 +94,32 @@ export const AnswerQuestion = [
  {
     idAnswerQuestion: 1,
     idQuestion: 1,
-    correcte: 2,
+    correcte: 3,
   },
 {
     idAnswerQuestion: 2,
     idQuestion: 2,
-    correcte: 0,
+    correcte: 5,
   },
 {
     idAnswerQuestion: 3,
     idQuestion: 3,
-    correcte: 1,
+    correcte: 8,
   },
 {
     idAnswerQuestion: 4,
     idQuestion: 4,
-    correcte: 2,
+    correcte: 10,
   },
 {
     idAnswerQuestion: 5,
     idQuestion: 5,
-    correcte: 0,
+    correcte: 13,
   },
  {
     idAnswerQuestion: 6,
     idQuestion: 6,
-    correcte: 2,
+    correcte: 16,
   },
 ];
 export const Answers = [
