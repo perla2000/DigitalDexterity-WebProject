@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Tests.css";
 
 import Object from "../../shared/object";
+import Trying from "../Trying";
 
 class Tests extends Component {
   constructor(props) {
@@ -48,7 +49,12 @@ class Tests extends Component {
                       </div>
                     </div>
                   ))}
-                  <button onClick="returnScore()" type="submit" value="Submit">
+                  <button
+                    onClick="returnScore()"
+                    type="submit"
+                    value="Submit"
+                    ref={Trying}
+                  >
                     Submit
                   </button>
                 </fieldset>

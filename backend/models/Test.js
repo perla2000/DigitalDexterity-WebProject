@@ -2,26 +2,31 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var TestSchema = new Schema({
-  Test_Desc: {
+  description: {
     type: String,
     required: true,
   },
-  Test_Type: {
-    type: String,
+  Date_ouverture: {
+    type: Number,
     required: true,
   },
-  // category:
-  //     {
-  //         type: mongoose.Schema.Types.ObjectId,
-  //         ref: 'Survey_Category'
-  //     },
-  // organisation:
-  //     {
-  //         type: mongoose.Schema.Types.ObjectId,
-  //         ref: 'Organisation'
-  //     }
+  Date_modifie: {
+    type: Number,
+    required: true,
+  },
+  Duree: {
+    type: Number,
+    required: true,
+  },
+  TestUser: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "test_user",
+  },
+  Question: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "question",
+  },
 });
 
 const Test = mongoose.model("Test", TestSchema);
-
 module.exports = Test;

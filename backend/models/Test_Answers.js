@@ -10,6 +10,9 @@ var Test_Answers_schema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Answer_Question",
   },
+  Date_rendue: {
+    type: Number,
+  },
 });
 
 const Test_Answers = mongoose.model("test_answer", Test_Answers_schema);
