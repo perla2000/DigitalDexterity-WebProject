@@ -7,8 +7,8 @@ import { BrowserRouter as Router, Route, Switch,withRouter } from "react-router-
 import {connect} from "react-redux";
 import Carousel from "./components/Carousel.js";
 import Footer from "./components/Footer.js";
-import Tests from "./components/test/Tests.js";
-import Register from "./components/Register.js";
+
+
 import Welcome from "./components/WelcomePage.js";
 import ExcelTest from "./components/test/ExcelTest.js";
 import PPTests from "./components/test/PPTests.js";
@@ -20,27 +20,58 @@ import Form from "./components/login/Form";
 import LogForm from "./components/login/LogForm";
 import Nav2 from "./components/Nav2.js";
 import { Nav } from "reactstrap";
-
+import { TestUser } from "./shared/database.js";
+import { Tests } from "./shared/database.js";
+import { Users } from "./shared/database.js";
 import PopUpshow from "./components/PopUpshow.js";
 import Database from "./components/test/testdatabase.js";
 import Timer from "./components/timer.js";
-import {Provider} from'react-redux';
-import {ConfigureStore} from "./redux/configureStore";
-// const store=ConfigureStore();
-// const mapStateToProps=state=>{
+import AdminHome from "./components/adminHomePage"
+
+
+import {fetchTests} from "./redux/ActionCreators";
+import {postTest} from "./redux/ActionCreators";
+
+
+
+// const mapStateToProps = state => {
+
 //   return {
-//     idTest: state.dishes,
-//     dateOuverture: state.dateOuverture,
-//     duree: state.duree,
-//     dateModification: dateModification.state,
-//     quizTitle: quizTitle.state,
+
+//     Tests: state.tests,
+
+ 
+
+//   //questions:
+
+
+
 //   }
+
 // }
+// const mapDispatchToProps = dispatch => ({
+
+// postTest:( dateOuverture, duree, dateModification, quizTitle)  =>dispatch(postTest(dateOuverture, duree, dateModification, quizTitle))
+// })
+
+
 class App extends Component {
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      Tests,
+      TestUser,
+      Users,
+
+    };
+  }
+  componentDidMount(){
+    this.props.fetchTests();
+  }
   render() {
     return (
-      // <Provider store={store}>
+      
+    
       <Router>
         {/* <div>
           <Timer />
@@ -62,6 +93,11 @@ class App extends Component {
                     <Route exact path="/">
                       <Welcome />
                     </Route>
+                    {/* <Route exact path="/view_admin_test">
+                      
+ <></>
+   
+                    </Route> */}
                     <Route exact path="/login">
                       <LogForm />
                     </Route>
@@ -77,8 +113,16 @@ class App extends Component {
                       </div>
                     </Route>
                     <Route exact path="/admin">
-                      <AdminPage />
+                  
+                     <div > <AdminHome /></div>
+                     
+                      {/* <AdminPage /> */}
+                      
                     </Route>
+                    <Route exact path="/modAd">
+
+                   <AdminPage  Tests={this.props.test} postTest={this.props.postTest}/>
+                 </Route>
                     <Route exact path="/pptest">
                       <PPTests />
                     </Route>
@@ -99,7 +143,7 @@ class App extends Component {
                       <PopUpshow />
                     </Route>
                     <Route exact path="/profile">
-                      <Profile />
+                      <Profile Tests={this.props.test}/>
                     </Route>
                   </Switch>
                 </div>
@@ -108,10 +152,7 @@ class App extends Component {
           </div>
         }
       </Router>
-      // </Provider>
+       
     );
   }
-}
-
-export default App;
-//withRouter(connect(mapStateToProps)(App));
+}export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));

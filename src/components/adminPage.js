@@ -30,6 +30,8 @@ const AdminPage = () => {
   console.log();
   const handleAddFormSubmit = (event) => {
     event.preventDefault();
+    const newTest=this.props.postTest( "2/1/2022", 10, "13/2/2022","leatest",
+  )
     const newQuestion = {
       id: nanoid(),
       description: addFormData.question,

@@ -1,10 +1,10 @@
 import * as ActionTypes from "./ActionTypes";
 import { baseUrl } from "../shared/baseUrl";
 export const postTest =
-  (idTest, dateOuverture, duree, dateModification, quizTitle) => (dispatch) => {
+  ( dateOuverture, duree, dateModification, quizTitle) => (dispatch) => {
     const newTest = {
-      idTest: idTest,
-      dateOuverture: dateOuverture,
+  
+      dateOuverture: dateOuverture,    // hon zedna
       duree: duree,
       dateModification: dateModification,
       quizTitle: quizTitle,
@@ -37,7 +37,7 @@ export const postTest =
         }
       )
       .then((response) => response.json())
-      .then((response) => dispatch(addTest(response)))
+      .then((response) => dispatch(addTest(response))) // hon zedna
       .catch((error) => {
         console.log("Post test ", error.message);
         alert("Your test could not be posted\nError: " + error.message);
@@ -48,7 +48,7 @@ export const addTest = (test) => ({
   payload: test,
 });
 export const fetchTests = () => (dispatch) => {
-  dispatch(testsLoading());
+
 
   return fetch(baseUrl + "tests")
     .then(
@@ -69,10 +69,17 @@ export const fetchTests = () => (dispatch) => {
       }
     )
     .then((response) => response.json())
-    .then((tests) => dispatch(AddTests(tests)))
-    .catch((error) => dispatch(dishesFailed(error.message)));
+    .then((tests) => dispatch(addTests(tests)))
+    .catch((error) => dispatch(testFailed(error.message)));
 };
-export const addAppointments = (tests) => ({
-  type: ActionTypes.Add_Test,
+export const addTests = (tests) => ({
+  type: ActionTypes.Add_Tests,
   payload: tests,
+});
+export const testFailed = (errmess) => ({
+
+  type: ActionTypes.Test_failed,
+
+  payload: errmess
+
 });
