@@ -6,7 +6,20 @@ var User = require("../models/User");
 
 router.use(bodyParser.json());
 
-router.post("/signup", (req, res, next) => {
+router.get("/", function (req, res, next) {
+  User.find()
+    .then(
+      (users) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json(users);
+      },
+      (err) => next(err)
+    )
+    .catch((err) => next(err));
+});
+
+router.post("/", (req, res, next) => {
   User.findOne({ username: req.body.username })
     .then((user) => {
       if (user != null) {
@@ -25,6 +38,19 @@ router.post("/signup", (req, res, next) => {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
         res.json({ status: "Registration Successful!", user: user });
+      },
+      (err) => next(err)
+    )
+    .catch((err) => next(err));
+});
+
+router.delete("/", (req, res, next) => {
+  User.remove({})
+    .then(
+      (user) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json(user);
       },
       (err) => next(err)
     )

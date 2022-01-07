@@ -8,8 +8,8 @@ Question_router.route("/")
   .get((req, res) => {
     Questions.find(req.query)
       // .populate("category")
-      .then((test) => {
-        res.json(test);
+      .then((question) => {
+        res.json(question);
       })
       .catch((err) => res.status(400).json("Error" + err));
   })
@@ -18,7 +18,7 @@ Question_router.route("/")
     Questions.create(req.body)
       .then(
         (question) => {
-          console.log("Test Questions sumitted", question);
+          console.log("Questions sumitted", question);
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(question);

@@ -8,9 +8,9 @@ var UserSchema = new Schema({
     unique: true,
     trim: true,
   },
-  Email: {
+  email: {
     type: String,
-    required: true,
+    required: false,
   },
   password: {
     type: String,
@@ -19,6 +19,10 @@ var UserSchema = new Schema({
   admin: {
     type: Boolean,
     default: false,
+  },
+  TestUser: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "test_user",
   },
 });
 

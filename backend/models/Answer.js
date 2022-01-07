@@ -6,7 +6,7 @@ var answer_schema = new Schema({
     type: Array,
     required: true,
   },
-  question: {
+  Answer_question: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Answer_Question",
   },

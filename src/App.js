@@ -88,7 +88,11 @@ class App extends Component {
                     <Route exact path="/test" >
                       <div>
                         <Timer />
+<<<<<<< Updated upstream
                         <Database />
+=======
+                        <Tests />
+>>>>>>> Stashed changes
                       </div>
                     </Route>
                     <Route exact path="/popup">

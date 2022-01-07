@@ -6,18 +6,13 @@ var Test_question_schema = new Schema({
     type: String,
     required: true,
   },
-  note: {
-    type: Number,
-    default: false,
-    // ref: 'Question_Category'
-  },
   Test: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Test",
   },
   Answer_ques: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Question_Answers",
+    ref: "Answer_Question",
   },
 });
 

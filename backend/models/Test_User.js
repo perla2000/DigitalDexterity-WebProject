@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var Test_User_schema = new Schema({
-  note: {
+  note_test: {
     type: Number,
     // required: true,
   },
@@ -20,6 +20,10 @@ var Test_User_schema = new Schema({
   User: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+  },
+  Test_Answer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "test_answer",
   },
 });
 const Test_User = mongoose.model("test_user", Test_User_schema);

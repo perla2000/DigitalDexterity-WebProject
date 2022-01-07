@@ -7,8 +7,8 @@ Test_router.use(bodyParser.json());
 Test_router.route("/")
   .get((req, res) => {
     Test.find(req.query)
-      .populate("category")
-      .then((survey) => res.json(survey))
+      //.populate("category")
+      .then((test) => res.json(test))
       .catch((err) => res.status(400).json("Error" + err));
   })
 

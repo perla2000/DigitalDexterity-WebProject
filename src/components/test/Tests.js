@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Tests.css";
 
 import Object from "../../shared/object";
+import Trying from "../Trying";
 
 class Tests extends Component {
   constructor(props) {

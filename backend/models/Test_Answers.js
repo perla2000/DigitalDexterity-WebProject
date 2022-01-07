@@ -10,6 +10,13 @@ var Test_Answers_schema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Answer_Question",
   },
+  Date_rendue: {
+    type: Number,
+  },
+  // Note_question: {
+  //   type: Number,
+  //   required : true,     ?
+  // },
 });
 
 const Test_Answers = mongoose.model("test_answer", Test_Answers_schema);

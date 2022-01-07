@@ -54,9 +54,6 @@ function Timer() {
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
-        <Route>
-          <Trying />
-        </Route>;
       }
     };
   }, []); //empty arrays to act as componenetDidMount

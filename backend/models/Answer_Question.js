@@ -6,13 +6,17 @@ var Answer_Question_schema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "question",
   },
-  answer: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "answer",
-  },
+  // answer: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "answer",
+  // },
   test_answer: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "test_answer",
+  },
+  CorrectAnswer: {
+    type: String,
+    required: true,
   },
 });
 
