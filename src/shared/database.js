@@ -39,14 +39,14 @@ export const TestUser= [
 export const Tests = [
  {
     idTest: 1,
-    dateOuverture:"2/1/2022",
+    dateOuverture: 0,
     duree: 0,
     dateModification: 0,
     quizTitle: "Powerpoint",
   },
   {
     idTest: 2,
-    dateOuverture:"2/1/2022",
+    dateOuverture: 0,
     duree: 0,
     dateModification: 0,
     quizTitle: "Excel",

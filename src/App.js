@@ -53,7 +53,7 @@ import {postTest} from "./redux/ActionCreators";
 
 // postTest:( dateOuverture, duree, dateModification, quizTitle)  =>dispatch(postTest(dateOuverture, duree, dateModification, quizTitle))
 // })
-
+//Tests={this.props.test} postTest={this.props.postTest} hyde bl <>
 
 class App extends Component {
   constructor(props) {
@@ -65,9 +65,9 @@ class App extends Component {
 
     };
   }
-  componentDidMount(){
-    this.props.fetchTests();
-  }
+  // componentDidMount(){
+  //   this.props.fetchTests();
+  // }
   render() {
     return (
       
@@ -121,8 +121,9 @@ class App extends Component {
                     </Route>
                     <Route exact path="/modAd">
 
-                   <AdminPage  Tests={this.props.test} postTest={this.props.postTest}/>
+                   <AdminPage  />     
                  </Route>
+                 
                     <Route exact path="/pptest">
                       <PPTests />
                     </Route>
@@ -132,11 +133,7 @@ class App extends Component {
                     <Route exact path="/test" >
                       <div>
                         <Timer />
-<<<<<<< Updated upstream
                         <Database />
-=======
-                        <Tests />
->>>>>>> Stashed changes
                       </div>
                     </Route>
                     <Route exact path="/popup">
@@ -155,4 +152,5 @@ class App extends Component {
        
     );
   }
-}export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));
+}export default App;
+// withRouter(connect(mapStateToProps,mapDispatchToProps)(App))

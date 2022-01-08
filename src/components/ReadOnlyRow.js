@@ -2,23 +2,45 @@ import React from "react";
 
 const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
   return (
-    <tr>
-      <td>{contact.fullName}</td>
-      <td>{contact.address}</td>
-      <td>{contact.phoneNumber}</td>
-      <td>{contact.email}</td>
-      <td>
-        <button
-          type="button"
-          onClick={(event) => handleEditClick(event, contact)}
-        >
-          Edit
-        </button>
-        <button type="button" onClick={() => handleDeleteClick(contact.id)}>
-          Delete
-        </button>
-      </td>
-    </tr>
+<table>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Number Of Answers</th>
+            <th>Answers</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          
+
+            
+          </tr>
+        </thead>
+
+        {Questions.map((question) => (
+          <tbody>
+            <tr>
+              <td>{question.description}</td>
+              <td>{Answers.filter((a)=>a.idAnswerQuestion==question.idQuestion).length}</td>
+              {Answers.filter((a)=>a.idAnswerQuestion==question.idQuestion).map((answer) =>{
+                  if (answer.idAnswer == AnswerQuestion.filter(a => a.idQuestion == question.idQuestion)[0].correcte) {
+                    return (
+                      <td style={{background:"rgb(2, 154, 238)", color:"white"}} >{answer.description}</td>
+                    )
+                  }
+                  else {
+                    return (
+                      <td>{answer.description}</td>
+                    )
+                  }
+                }
+              )}
+            
+            </tr>
+          </tbody>
+))}
+      </table>
+
   );
 };
 
