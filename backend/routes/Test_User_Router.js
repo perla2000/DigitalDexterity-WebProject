@@ -7,6 +7,8 @@ Test_User_router.use(bodyParser.json());
 Test_User_router.route("/")
   .get((req, res) => {
     Test_User.find(req.query)
+      .populate("Test", "description")
+      .populate("User", "username")
       .then((org) => res.json(org))
       .catch((err) => res.status(400).json("Error" + err));
   })
@@ -41,7 +43,7 @@ Test_User_router.route("/")
       )
       .catch((err) => next(err));
   });
-Test_User.route("/:TUId")
+Test_User_router.route("/:TUId")
   .options((req, res) => {
     res.sendStatus(200);
   })
@@ -82,4 +84,4 @@ Test_User.route("/:TUId")
 //         }, (err) => next(err))
 //         .catch((err) => next(err));
 //});
-module.exports = Test_User;
+module.exports = Test_User_router;

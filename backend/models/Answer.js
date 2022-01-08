@@ -6,10 +6,10 @@ var answer_schema = new Schema({
     type: Array,
     required: true,
   },
-  Answer_question: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Answer_Question",
-  },
+  // Answer_question: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "Answer_Question",
+  // },
 });
 
 var answers = mongoose.model("answer", answer_schema);

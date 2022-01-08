@@ -1,13 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const Questions = require("../models/Test_Answers");
+const Questions = require("../models/Question");
 const Question_router = express.Router();
 Question_router.use(bodyParser.json());
 
 Question_router.route("/")
   .get((req, res) => {
     Questions.find(req.query)
-      // .populate("category")
+      .populate("Test", "description")
       .then((question) => {
         res.json(question);
       })
@@ -44,5 +44,14 @@ Question_router.route("/")
       )
       .catch((err) => next(err));
   });
+
+Question_router.route("/test/:TestId").get((req, res) => {
+  Questions.find({ Test: req.params.TestId })
+    .populate("Test", "description")
+    .then((question) => {
+      res.json(question);
+    })
+    .catch((err) => res.status(400).json("Error" + err));
+});
 
 module.exports = Question_router;

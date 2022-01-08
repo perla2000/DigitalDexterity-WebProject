@@ -7,11 +7,11 @@ var TestSchema = new Schema({
     required: true,
   },
   Date_ouverture: {
-    type: Number,
+    type: String,
     required: true,
   },
   Date_modifie: {
-    type: Number,
+    type: String,
     required: true,
   },
   Duree: {
@@ -21,10 +21,6 @@ var TestSchema = new Schema({
   TestUser: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "test_user",
-  },
-  Question: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "question",
   },
 });
 

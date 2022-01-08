@@ -3,11 +3,15 @@ import Menu from "./components/HomePhotos.js";
 
 import Navv from "./components/Navv.js";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch,withRouter } from "react-router-dom";
-import {connect} from "react-redux";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
+import { connect } from "react-redux";
 import Carousel from "./components/Carousel.js";
 import Footer from "./components/Footer.js";
-
 
 import Welcome from "./components/WelcomePage.js";
 import ExcelTest from "./components/test/ExcelTest.js";
@@ -26,13 +30,11 @@ import { Users } from "./shared/database.js";
 import PopUpshow from "./components/PopUpshow.js";
 import Database from "./components/test/testdatabase.js";
 import Timer from "./components/timer.js";
-import AdminHome from "./components/adminHomePage"
+import AdminHome from "./components/adminHomePage";
 
-
-import {fetchTests} from "./redux/ActionCreators";
-import {postTest} from "./redux/ActionCreators";
-
-
+import { fetchTests } from "./redux/ActionCreators";
+import { postTest } from "./redux/ActionCreators";
+import AdminUser from "./components/adminUser.js";
 
 // const mapStateToProps = state => {
 
@@ -40,11 +42,7 @@ import {postTest} from "./redux/ActionCreators";
 
 //     Tests: state.tests,
 
- 
-
 //   //questions:
-
-
 
 //   }
 
@@ -62,7 +60,6 @@ class App extends Component {
       Tests,
       TestUser,
       Users,
-
     };
   }
   // componentDidMount(){
@@ -70,8 +67,6 @@ class App extends Component {
   // }
   render() {
     return (
-      
-    
       <Router>
         {/* <div>
           <Timer />
@@ -94,9 +89,6 @@ class App extends Component {
                       <Welcome />
                     </Route>
                     {/* <Route exact path="/view_admin_test">
-                      
- <></>
-   
                     </Route> */}
                     <Route exact path="/login">
                       <LogForm />
@@ -113,11 +105,11 @@ class App extends Component {
                       </div>
                     </Route>
                     <Route exact path="/admin">
-                  
-                     <div > <AdminHome /></div>
-                     
+                      <div>
+                        {" "}
+                        <AdminHome />
+                      </div>
                       {/* <AdminPage /> */}
-                      
                     </Route>
                     <Route exact path="/modAd">
 
@@ -130,7 +122,7 @@ class App extends Component {
                     <Route exact path="/extest">
                       <ExcelTest />
                     </Route>
-                    <Route exact path="/test" >
+                    <Route exact path="/test">
                       <div>
                         <Timer />
                         <Database />
@@ -140,7 +132,7 @@ class App extends Component {
                       <PopUpshow />
                     </Route>
                     <Route exact path="/profile">
-                      <Profile Tests={this.props.test}/>
+                      <Profile Tests={this.props.test} />
                     </Route>
                   </Switch>
                 </div>
@@ -149,7 +141,6 @@ class App extends Component {
           </div>
         }
       </Router>
-       
     );
   }
 }export default App;

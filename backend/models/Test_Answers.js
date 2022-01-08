@@ -11,7 +11,8 @@ var Test_Answers_schema = new Schema({
     ref: "Answer_Question",
   },
   Date_rendue: {
-    type: Number,
+    type: String,
+    required: true,
   },
   // Note_question: {
   //   type: Number,
