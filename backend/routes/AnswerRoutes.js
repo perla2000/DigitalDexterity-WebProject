@@ -1,26 +1,26 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const Answer_Question = require("../models/Answer_Question");
-const Answer_Question_router = express.Router();
-Answer_Question_router.use(bodyParser.json());
+const Answer = require("../models/Answer");
+const Answer_router = express.Router();
+Answer_router.use(bodyParser.json());
 
-Answer_Question_router.route("/")
+Answer_router.route("/")
   .get((req, res) => {
-    Answer_Question.find(req.query)
-      .populate("question", "description")
-      .populate("answer", "description")
-      .then((AQ) => res.json(AQ))
+    Answer.find(req.query)
+      .populate("Question", "description")
+      .populate("Answer", "description")
+      .then((answer) => res.json(answer))
       .catch((err) => res.status(400).json("Error" + err));
   })
 
   .post((req, res, next) => {
-    Answer_Question.create(req.body)
+    Answer.create(req.body)
       .then(
-        (AQ) => {
-          console.log("Test Created ", AQ);
+        (answer) => {
+          console.log("Answer added ", answer);
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(AQ);
+          res.json(answer);
         },
         (err) => next(err)
       )
@@ -29,10 +29,10 @@ Answer_Question_router.route("/")
 
   .put((req, res, next) => {
     res.statusCode = 403;
-    res.end("PUT operation not supported on /Answer_Question");
+    res.end("PUT operation not supported on /Answer");
   })
   .delete((req, res, next) => {
-    Answer_Question.remove({})
+    Answer.remove({})
       .then(
         (response) => {
           res.statusCode = 200;
@@ -43,14 +43,14 @@ Answer_Question_router.route("/")
       )
       .catch((err) => next(err));
   });
-Answer_Question_router.route("/:TestId")
+Answer_router.route("/:AnswerId")
   .get((req, res, next) => {
-    Answer_Question.findById(req.params.TestId)
+    Answer.findById(req.params.AnswerId)
       .then(
-        (AQ) => {
+        (answer) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(AQ);
+          res.json(answer);
         },
         (err) => next(err)
       )
@@ -58,29 +58,29 @@ Answer_Question_router.route("/:TestId")
   })
   .post((req, res) => {
     res.statusCode = 403;
-    res.end("POST operation not supported on /comments/" + req.params._id);
+    res.end("POST operation not supported on /Answers/" + req.params._id);
   })
 
   .put((req, res, next) => {
-    Answer_Question.findByIdAndUpdate(
-      req.params.TestId,
+    Answer.findByIdAndUpdate(
+      req.params.AnswerId,
       {
         $set: req.body,
       },
       { new: true }
     )
       .then(
-        (Answer_Question) => {
+        (Answer) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(Answer_Question);
+          res.json(Answer);
         },
         (err) => next(err)
       )
       .catch((err) => next(err));
   })
   .delete((req, res, next) => {
-    Answer_Question.findByIdAndRemove(req.params.TestId)
+    Answer.findByIdAndRemove(req.params.AnswerId)
       .then(
         (response) => {
           res.statusCode = 200;
@@ -92,4 +92,4 @@ Answer_Question_router.route("/:TestId")
       .catch((err) => next(err));
   });
 
-module.exports = Answer_Question_router;
+module.exports = Answer_router;

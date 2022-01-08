@@ -10,11 +10,11 @@ var Test_question_schema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Test",
   },
-  Answer_ques: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Answer_Question",
-  },
+  // Answer_ques: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "Answer_Question",
+  // },
 });
 
-var question = mongoose.model("question", Test_question_schema);
+const question = mongoose.model("question", Test_question_schema);
 module.exports = question;

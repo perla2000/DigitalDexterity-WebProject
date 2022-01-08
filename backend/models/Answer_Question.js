@@ -6,18 +6,18 @@ var Answer_Question_schema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "question",
   },
-  // answer: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "answer",
-  // },
-  test_answer: {
+  answer: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "test_answer",
+    ref: "answer",
   },
   CorrectAnswer: {
     type: String,
     required: true,
   },
+  // test_answer: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "test_answer",
+  // },
 });
 
 const Answer_Question = mongoose.model(

@@ -25,13 +25,15 @@ app.listen(PORT, () => {
 const TestRouter = require("./routes/TestRoutes");
 const usersRouter = require("./routes/UserRoutes");
 const questionRouter = require("./routes/Question_Router");
-// const answerRouter = require("./routes/Test_AnswersRouter");
-// const QanswerRouter = require("./routes/Answer_QuestionRouter");
+const answerRouter = require("./routes/AnswerRoutes");
+const QanswerRouter = require("./routes/Answer_QuestionRouter");
+const TestUserRouter = require("./routes/Test_User_Router");
 
 app.use("/test", TestRouter);
 app.use("/users", usersRouter);
 app.use("/question", questionRouter);
-// app.use("/answers", answerRouter);
-// app.use("/questionAsnwers", QanswerRouter);
+app.use("/answers", answerRouter);
+app.use("/questionAnswers", QanswerRouter);
+app.use("/testUser", TestUserRouter);
 
 module.exports = app;

@@ -18,7 +18,6 @@ var UserSchema = new Schema({
   },
   admin: {
     type: Boolean,
-    default: false,
   },
   TestUser: {
     type: mongoose.Schema.Types.ObjectId,
