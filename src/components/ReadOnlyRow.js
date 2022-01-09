@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
+const ReadOnlyRow = ({Questions,Answers,Tests,AnswerQuestion}) => {
   return (
 <table>
         <thead>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory, Redirect, withRouter } from "react-router-dom";
-import AdminPage from "../adminPage";
+import AdminPage from "../admin/adminPage";
 import history from "./history";
 
 const useLogForm = (callback, validate) => {

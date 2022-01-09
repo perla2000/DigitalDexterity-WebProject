@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./Profile.css";
-import { TestUser } from "../shared/database.js";
-import { Tests } from "../shared/database.js";
-import { Users } from "../shared/database.js";
+import "../Profile.css";
+import { TestUser } from "../../shared/database.js";
+import { Tests } from "../../shared/database.js";
+import { Users } from "../../shared/database.js";
 import { Link } from "react-router-dom";
 
 //<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>;
@@ -41,7 +41,7 @@ class AdminHome extends Component {
             <p>List of Tests</p>
           </Link>
           <Link
-            to="/modAd"
+            to="/creatTest"
             style={{
               color: "white",
               fontSize: "15px",
