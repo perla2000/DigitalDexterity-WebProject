@@ -17,7 +17,6 @@ Answer_Question_router.route("/")
     Answer_Question.create(req.body)
       .then(
         (AQ) => {
-          console.log("Test Created ", AQ);
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(AQ);
@@ -43,9 +42,9 @@ Answer_Question_router.route("/")
       )
       .catch((err) => next(err));
   });
-Answer_Question_router.route("/:TestId")
+Answer_Question_router.route("/:AnsQuesId")
   .get((req, res, next) => {
-    Answer_Question.findById(req.params.TestId)
+    Answer_Question.findById(req.params.AnsQuesId)
       .then(
         (AQ) => {
           res.statusCode = 200;
@@ -58,12 +57,12 @@ Answer_Question_router.route("/:TestId")
   })
   .post((req, res) => {
     res.statusCode = 403;
-    res.end("POST operation not supported on /comments/" + req.params._id);
+    res.end("POST operation not supported" + req.params._id);
   })
 
   .put((req, res, next) => {
     Answer_Question.findByIdAndUpdate(
-      req.params.TestId,
+      req.params.AnsQuesId,
       {
         $set: req.body,
       },
@@ -80,7 +79,7 @@ Answer_Question_router.route("/:TestId")
       .catch((err) => next(err));
   })
   .delete((req, res, next) => {
-    Answer_Question.findByIdAndRemove(req.params.TestId)
+    Answer_Question.findByIdAndRemove(req.params.AnsQuesId)
       .then(
         (response) => {
           res.statusCode = 200;

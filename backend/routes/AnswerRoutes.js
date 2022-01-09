@@ -7,8 +7,6 @@ Answer_router.use(bodyParser.json());
 Answer_router.route("/")
   .get((req, res) => {
     Answer.find(req.query)
-      .populate("Question", "description")
-      .populate("Answer", "description")
       .then((answer) => res.json(answer))
       .catch((err) => res.status(400).json("Error" + err));
   })

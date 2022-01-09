@@ -112,10 +112,9 @@ class App extends Component {
                       {/* <AdminPage /> */}
                     </Route>
                     <Route exact path="/modAd">
+                      <AdminPage />
+                    </Route>
 
-                   <AdminPage  />     
-                 </Route>
-                 
                     <Route exact path="/pptest">
                       <PPTests />
                     </Route>
@@ -143,5 +142,6 @@ class App extends Component {
       </Router>
     );
   }
-}export default App;
+}
+export default App;
 // withRouter(connect(mapStateToProps,mapDispatchToProps)(App))

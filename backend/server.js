@@ -28,6 +28,7 @@ const questionRouter = require("./routes/Question_Router");
 const answerRouter = require("./routes/AnswerRoutes");
 const QanswerRouter = require("./routes/Answer_QuestionRouter");
 const TestUserRouter = require("./routes/Test_User_Router");
+const TestAnswerRouter = require("./routes/Test_AnswersRoutes");
 
 app.use("/test", TestRouter);
 app.use("/users", usersRouter);
@@ -35,5 +36,6 @@ app.use("/question", questionRouter);
 app.use("/answers", answerRouter);
 app.use("/questionAnswers", QanswerRouter);
 app.use("/testUser", TestUserRouter);
+app.use("/testAnswer", TestAnswerRouter);
 
 module.exports = app;

@@ -7,7 +7,8 @@ Test_Answers_router.use(bodyParser.json());
 Test_Answers_router.route("/")
   .get((req, res) => {
     Test_Answers.find(req.query)
-      .populate("question")
+      .populate("test_user")
+      .populate("Answer_Question")
       .then((test) => {
         res.json(test);
       })
