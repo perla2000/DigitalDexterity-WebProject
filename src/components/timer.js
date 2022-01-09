@@ -65,7 +65,7 @@ function Timer() {
         fontSize: "40px",
       }}
     >
-      {timer}
+      Time Left {timer}
     </div>
   );
 }

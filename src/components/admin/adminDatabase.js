@@ -5,7 +5,8 @@ import "./adminPage.css";
 // import EditableRow from "./components/EditableRow.js";
 import "./adminPage.css";
 import Object from "../../shared/object";
-const Test=Object.Powerpoint;
+import { Tests } from "../../shared/database";
+const Test = Object.Powerpoint;
 const AdminPage = () => {
   const [Questions, setQuestions] = useState(Object.Powerpoint.questions);
 
@@ -72,17 +73,19 @@ const AdminPage = () => {
           </tr>
         </thead>
 
-        {Questions.map((question) => (
-          <tbody>
-            <tr>
-              <td>{question.description}</td>
-              {question.answers.map((answer) => (
-                <td>{answer[0]}</td>
-              ))}
-              <td>{question.answers.filter((a) => a[1] == true)[0]}</td>
-            </tr>
-          </tbody>
-        ))}
+        {Questions.filter((p) => p.id == Tests[0].idTest).map(
+          Questions.map((question) => (
+            <tbody>
+              <tr>
+                <td>{question.description}</td>
+                {question.answers.map((answer) => (
+                  <td>{answer[0]}</td>
+                ))}
+                <td>{question.answers.filter((a) => a[1] == true)[0]}</td>
+              </tr>
+            </tbody>
+          ))
+        )}
       </table>
 
       <h2 class="h">Add a question</h2>

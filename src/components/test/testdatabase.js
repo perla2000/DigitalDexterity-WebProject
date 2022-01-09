@@ -5,6 +5,7 @@ import { Tests } from "../../shared/database.js";
 import { Questions } from "../../shared/database.js";
 import { Answers } from "../../shared/database.js";
 import { AnswerQuestion } from "../../shared/database.js";
+import Timer from "../../components/timer.js";
 
 class Database extends Component {
   constructor(props) {
@@ -14,14 +15,12 @@ class Database extends Component {
       Questions,
       Answers,
       AnswerQuestion,
-      score:0,
- 
-
+      score: 0,
     };
   }
 
   returnScore(event) {
-    var result=0;
+    var result = 0;
     for (var i = 0; i < AnswerQuestion.length; ++i) {
       var ele = document.getElementsByName(AnswerQuestion[i].idAnswerQuestion);
       for (var j = 0; j < ele.length; ++j) {
@@ -30,15 +29,18 @@ class Database extends Component {
         }
       }
     }
-    this.setState({score:result})
+    this.setState({ score: result });
     event.preventDefault();
-  };
+  }
 
   render() {
     return (
       <html>
         <body>
           <div class="main">
+            <br />
+            <Timer />
+            <br />
             <div class="header">
               <h1
                 style={{
@@ -51,36 +53,40 @@ class Database extends Component {
             </div>
             <form id="form1">
               <div>
+                <p style={{ fontSize: "30px" }}>
+                  Your grade is: <span id="grade">{this.state.score}</span>
+                </p>
+                <p id="grade2"></p>
                 <fieldset>
-                  {Questions
-                    .filter((q) => q.idTest == Tests[0].idTest)
-                    .map((q) => (
+                  {Questions.filter((q) => q.idTest == Tests[0].idTest).map(
+                    (q) => (
                       <div style={{ marginTop: "50px" }}>
                         <div>
                           <h2>{q.description}</h2>
-                          {Answers
-                            .filter((a) => a.idAnswerQuestion == q.idQuestion)
-                            .map((a) => (
-                              <label class="label" for="overtype">
-                                <input
-                                  type="radio"
-                                  name={a.idAnswerQuestion}
-                                  value="0"
-                                  id={a.idAnswer}
-                                />
-                                {a.description}
-                              </label>
-                            ))}
-
+                          {Answers.filter(
+                            (a) => a.idAnswerQuestion == q.idQuestion
+                          ).map((a) => (
+                            <label class="label" for="overtype">
+                              <input
+                                type="radio"
+                                name={a.idAnswerQuestion}
+                                value="0"
+                                id={a.idAnswer}
+                              />
+                              {a.description}
+                            </label>
+                          ))}
                         </div>
                       </div>
-                    ))}
+                    )
+                  )}
 
                   <button
-                    onClick={() => this.returnScore()}
+                    //onClick={() => this.returnScore()}
+                    href="/home"
                     type="submit"
                     value="Submit"
-                    
+                    style={{ marginBottom: "30px" }}
                   >
                     Submit
                   </button>
@@ -88,13 +94,7 @@ class Database extends Component {
               </div>
             </form>
           </div>
-         <p>
-            Your grade is: <span id="grade">{this.state.score}</span>
-          </p>
-          <p id="grade2"></p> 
-         <script>
-            
-        </script> 
+          {/* <script></script> */}
         </body>
       </html>
     );

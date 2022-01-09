@@ -29,7 +29,6 @@ import { Tests } from "./shared/database.js";
 import { Users } from "./shared/database.js";
 import PopUpshow from "./components/PopUpshow.js";
 import Database from "./components/test/testdatabase.js";
-import Timer from "./components/timer.js";
 import AdminHome from "./components/admin/adminHomePage";
 
 import { fetchTests } from "./redux/ActionCreators";
@@ -134,7 +133,6 @@ class App extends Component {
                     </Route>
                     <Route exact path="/test">
                       <div>
-                        <Timer />
                         <Database />
                       </div>
                     </Route>
