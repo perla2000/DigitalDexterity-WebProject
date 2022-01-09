@@ -18,7 +18,7 @@ import ExcelTest from "./components/test/ExcelTest.js";
 import PPTests from "./components/test/PPTests.js";
 import Trying from "./components/Trying.js";
 import Profile from "./components/Profile.js";
-import AdminPage from "./components/adminPage.js";
+import AdminPage from "./components/admin/adminPage.js";
 import FormSignup from "./components/login/FormSignup";
 import Form from "./components/login/Form";
 import LogForm from "./components/login/LogForm";
@@ -30,11 +30,12 @@ import { Users } from "./shared/database.js";
 import PopUpshow from "./components/PopUpshow.js";
 import Database from "./components/test/testdatabase.js";
 import Timer from "./components/timer.js";
-import AdminHome from "./components/adminHomePage";
+import AdminHome from "./components/admin/adminHomePage";
 
 import { fetchTests } from "./redux/ActionCreators";
 import { postTest } from "./redux/ActionCreators";
-import AdminUser from "./components/adminUser.js";
+import AdminUser from "./components/admin/adminUser.js";
+import CreateTest from "./components/admin/adminCreateTest.js";
 
 // const mapStateToProps = state => {
 
@@ -105,16 +106,33 @@ class App extends Component {
                       </div>
                     </Route>
                     <Route exact path="/admin">
-                      <div>
-                        {" "}
+                  
                         <AdminHome />
-                      </div>
-                      {/* <AdminPage /> */}
+                      
                     </Route>
+<<<<<<< HEAD
                     <Route exact path="/modAd">
                       <AdminPage />
                     </Route>
 
+=======
+                  
+                    <Route exact path="/creatTest">
+                  <CreateTest/>
+
+              </Route>
+                    <Route exact path="/modAd">
+                      <AdminPage 
+                      // Tests={this.props.test}
+                      // postTest={this.props.postTest}
+                      />
+                    </Route>
+                    <Route exact path="/view_admin_test">
+                      <div>
+                        <AdminUser />
+                      </div>
+                    </Route>
+>>>>>>> c7c8377df1dd8059a043bfa85d66e79f50d6ca8d
                     <Route exact path="/pptest">
                       <PPTests />
                     </Route>
@@ -130,6 +148,7 @@ class App extends Component {
                     <Route exact path="/popup">
                       <PopUpshow />
                     </Route>
+                    
                     <Route exact path="/profile">
                       <Profile Tests={this.props.test} />
                     </Route>

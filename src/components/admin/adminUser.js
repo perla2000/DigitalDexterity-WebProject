@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./Profile.css";
-import { TestUser } from "../shared/database.js";
-import { Tests } from "../shared/database.js";
-import { Users } from "../shared/database.js";
+import "../Profile.css";
+import { TestUser } from "../../shared/database.js";
+import { Tests } from "../../shared/database.js";
+import { Users } from "../../shared/database.js";
 import { Link } from "react-router-dom";
 
 class AdminUser extends Component {
@@ -39,7 +39,7 @@ class AdminUser extends Component {
             <p>List of Tests</p>
           </Link>
           <Link
-            to="/modAd"
+            to="/creatTest"
             style={{
               color: "white",
               fontSize: "15px",

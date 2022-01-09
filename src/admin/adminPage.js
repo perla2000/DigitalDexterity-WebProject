@@ -4,7 +4,7 @@ import "./adminPage.css";
 // import ReadOnlyRow from "./components/ReadOnlyRow.js";
 // import EditableRow from "./components/EditableRow.js";
 import "./adminPage.css";
-import { Questions, Answers, AnswerQuestion, Tests } from "../shared/database";
+import { Questions, Answers, AnswerQuestion, Tests } from "../../shared/database";
 const AdminPage = () => {
   const [Tests_, setTests] = useState(Tests);
   const [Questions_, setQuestions] = useState(Questions);
