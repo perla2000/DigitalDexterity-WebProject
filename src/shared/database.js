@@ -112,6 +112,40 @@ export const Questions = [
     description:
       "PowerPoint has direct connections with which of the following from its toolbars or menu system?",
   },
+  {
+    idTest: 2,
+    idQuestion: 7,
+    description:
+      "A fast way to add up this column of numbers is to click on the cell below the numbers and then:",
+  },
+  {
+    idTest: 2,
+    idQuestion: 8,
+    description: "How do you change the column width to fit the contents?",
+  },
+  {
+    idTest: 2,
+    idQuestion: 9,
+    description: "###### means:",
+  },
+  {
+    idTest: 2,
+    idQuestion: 10,
+    description:
+      "Which key do you press to group two or more nonadjacent worksheets?",
+  },
+  {
+    idTest: 2,
+    idQuestion: 11,
+    description:
+      "Which formula can add all the numeric values in a range of cells, ignoring those which are not numeric, and place the result in a different cell?",
+  },
+  {
+    idTest: 2,
+    idQuestion: 12,
+    description:
+      "A user wishes to remove a spreadsheet from a workbook. Which is the correct sequence of events that will do this?",
+  },
 ];
 
 export const AnswerQuestion = [
@@ -144,6 +178,36 @@ export const AnswerQuestion = [
     idAnswerQuestion: 6,
     idQuestion: 6,
     correcte: 16,
+  },
+  {
+    idAnswerQuestion: 7,
+    idQuestion: 7,
+    correcte: 20,
+  },
+  {
+    idAnswerQuestion: 8,
+    idQuestion: 8,
+    correcte: 24,
+  },
+  {
+    idAnswerQuestion: 9,
+    idQuestion: 9,
+    correcte: 27,
+  },
+  {
+    idAnswerQuestion: 10,
+    idQuestion: 10,
+    correcte: 29,
+  },
+  {
+    idAnswerQuestion: 11,
+    idQuestion: 11,
+    correcte: 32,
+  },
+  {
+    idAnswerQuestion: 12,
+    idQuestion: 12,
+    correcte: 35,
   },
 ];
 export const Answers = [
@@ -245,6 +309,99 @@ export const Answers = [
   {
     idAnswer: 18,
     idAnswerQuestion: 6,
+    description: "Your E-Mail program",
+  },
+  {
+    idAnswer: 19,
+    idAnswerQuestion: 7,
+    description: "Click Subtotals on the Data menu.",
+  },
+  {
+    idAnswer: 20,
+    idAnswerQuestion: 7,
+    description: "View the sum in the formula bar.",
+  },
+  {
+    idAnswer: 21,
+    idAnswerQuestion: 7,
+    description:
+      "Click the AutoSum button on the Standard toolbar, then press ENTER.",
+  },
+  {
+    idAnswer: 22,
+    idAnswerQuestion: 8,
+    description: "Single-click the boundary to the left of the column heading.",
+  },
+  {
+    idAnswer: 23,
+    idAnswerQuestion: 8,
+    description:
+      "Double-click the boundary to the right of the column heading.",
+  },
+  {
+    idAnswer: 24,
+    idAnswerQuestion: 8,
+    description: "Press ALT and single-click anywhere in the column",
+  },
+  {
+    idAnswer: 25,
+    idAnswerQuestion: 9,
+    description: "You've entered a number wrong.",
+  },
+  {
+    idAnswer: 26,
+    idAnswerQuestion: 9,
+    description: "You've misspelled something.",
+  },
+  {
+    idAnswer: 27,
+    idAnswerQuestion: 9,
+    description: "The cell is not wide enough.",
+  },
+  {
+    idAnswer: 28,
+    idAnswerQuestion: 10,
+    description: "Alt.",
+  },
+  {
+    idAnswer: 29,
+    idAnswerQuestion: 10,
+    description: "Shift.",
+  },
+  {
+    idAnswer: 30,
+    idAnswerQuestion: 10,
+    description: "Ctrl.",
+  },
+  {
+    idAnswer: 31,
+    idAnswerQuestion: 11,
+    description: "Count.",
+  },
+  {
+    idAnswer: 32,
+    idAnswerQuestion: 11,
+    description: "Average.",
+  },
+  {
+    idAnswer: 33,
+    idAnswerQuestion: 11,
+    description: "Sum.",
+  },
+  {
+    idAnswer: 34,
+    idAnswerQuestion: 12,
+    description: "Go to FILE - SAVE AS - SAVE AS TYPE - Excel 4.0 Work Sheet",
+  },
+  {
+    idAnswer: 35,
+    idAnswerQuestion: 12,
+    description:
+      "Right-click on the spreadsheet and select INSERT - ENTIRE COLUMN.",
+  },
+  {
+    idAnswer: 36,
+    idAnswerQuestion: 12,
     description: "Your E-Mail program",
   },
 ];

@@ -4,7 +4,12 @@ import "./adminPage.css";
 // import ReadOnlyRow from "./components/ReadOnlyRow.js";
 // import EditableRow from "./components/EditableRow.js";
 import "./adminPage.css";
-import { Questions, Answers, AnswerQuestion, Tests } from "../../shared/database";
+import {
+  Questions,
+  Answers,
+  AnswerQuestion,
+  Tests,
+} from "../../shared/database";
 import ReadOnlyRow from "../ReadOnlyRow";
 const AdminPage = () => {
   const [Tests_, setTests] = useState(Tests);
@@ -12,11 +17,10 @@ const AdminPage = () => {
 
   const [Answers_, setAnswers] = useState(Answers);
   const [AnswerQuestion_, setAnswerQuestion] = useState(AnswerQuestion);
-  
 
   const data = {
     question: "",
-    nb_ans:1,
+    nb_ans: 1,
     answers: [],
     correctAnswer: 0,
   };
@@ -43,18 +47,24 @@ const AdminPage = () => {
       idTest: Tests.length() + 1,
       description: addFormData.question,
     };
-    for(var i=0;i<addFormData.nb_ans;++i){
-      const newAnswers =newAnswers.push(
-        {idAnswerQuestion: newQuestion.id,
+    for (var i = 0; i < addFormData.nb_ans; ++i) {
+      const newAnswers = newAnswers.push({
+        idAnswerQuestion: newQuestion.id,
         idQuestion: newQuestion.id,
-        description:addFormData.answers[i],}
-      );}
+        description: addFormData.answers[i],
+      });
+    }
     const newAnswerQuestion = {
       idAnswerQuestion: newQuestion.id,
       idQuestion: newQuestion.id,
-      correcte:addFormData.newAnswers[addFormData.answers.length()-addFormData.nb_ans-2+addFormData.correctAnswer],
+      correcte:
+        addFormData.newAnswers[
+          addFormData.answers.length() -
+            addFormData.nb_ans -
+            2 +
+            addFormData.correctAnswer
+        ],
     };
-   
 
     // question:addFormData.question,
     // answer1:addFormData.answer1,
@@ -63,7 +73,7 @@ const AdminPage = () => {
     // correctAnswer:addFormData.correctAnswer,
 
     let q = [...Questions_];
-    let aq=[...AnswerQuestion_]
+    let aq = [...AnswerQuestion_];
     let a = [...Answers_];
 
     q.push(newQuestion);
@@ -74,68 +84,103 @@ const AdminPage = () => {
     setAnswers(a);
     setAddFormData(data);
   };
-  const DropList=(nb_ans)=>{
-   
-  var op=[];
-  for(var i=1;i<nb_ans+1;++i){
-    op.push(<option value={i}>{i}</option>);
-    }return(op)
-    };
-    const InputAnswers=({nb_ans})=>{var inputs=[];
-  for(var i=0;i<10;++i){
-   inputs.push(
-    <input
-      class="j"
-      type="text"
-      required="required"
-      placeholder="Enter an answer..."
-      name="answers"
-      value={addFormData.answers.push}
-      onChange={handleAddFormChange}
-    />)}return(inputs)}
-  return (
-    <div className="app-container"         style={{
-      background:"linear-gradient(to top, rgb(0, 157, 255) 0%, rgb(0, 0, 0) 100%)",
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-    }}>
-<ReadOnlyRow Questions={Questions} Answers={Answers} Tests={Tests} AnswerQuestion={AnswerQuestion}/>
-
-      <h2 class="h">Add a question</h2>
-      <form class="hello" onSubmit={()=>this.handleAddFormSubmit}>
-      <label style={{color:"white"}}>Question:</label>
+  const DropList = (nb_ans) => {
+    var op = [];
+    for (var i = 1; i < nb_ans + 1; ++i) {
+      op.push(<option value={i}>{i}</option>);
+    }
+    return op;
+  };
+  const InputAnswers = ({ nb_ans }) => {
+    var inputs = [];
+    for (var i = 0; i < 5; ++i) {
+      inputs.push(
         <input
-          class="i"
-          type="text"
-          name="question"
-          required="required"
-          placeholder="Enter a question..."
-          value={addFormData.question}
-          onChange={handleAddFormChange}
-        /><label style={{color:"white"}}>Number of answers:</label>
-          <input
           class="j"
           type="text"
-          name="nb_ans"
           required="required"
-          placeholder="Enter number..."
-          value={addFormData.nb_ans}
+          placeholder="Enter an answer..."
+          name="answers"
+          value={addFormData.answers.push}
           onChange={handleAddFormChange}
+          style={{ width: "auto", fontSize: "25px" }}
         />
-        
-        <label style={{color:"white" }}>Answers:</label>
-        {InputAnswers(5)}
-        <label style={{color:"white" }}>Correct answer:</label>
-        <select value={addFormData.correctAnswer}  onChange={handleAddFormChange} class="j">
-       {DropList(5)}
-       
-       </select>
-        {/* <button type="button" onClick={handleCancelClick}>
-          Cancel
-        </button> */}
-      </form>
+      );
+    }
+    return inputs;
+  };
+  return (
+    <div
+      className="app-container"
+      style={{
+        background:
+          "linear-gradient(to top, rgb(0, 157, 255) 0%, rgb(0, 0, 0) 100%)",
+        position: "absolute",
+        objectFit: "cover",
+      }}
+    >
+      <ReadOnlyRow
+        Questions={Questions}
+        Answers={Answers}
+        Tests={Tests}
+        AnswerQuestion={AnswerQuestion}
+      />
+      <div>
+        <h2 class="h">Add a question</h2>
+        <form class="hello" onSubmit={() => this.handleAddFormSubmit}>
+          <div>
+            <label style={{ color: "white", fontSize: "35px" }}>
+              Question:
+            </label>
+            <input
+              class="i"
+              className="col-xs-offset-2"
+              //type="text"
+              name="question"
+              required="required"
+              placeholder="Enter a question..."
+              value={addFormData.question}
+              onChange={handleAddFormChange}
+              style={{ width: "fit-content", fontSize: "25px" }}
+            />
+            <br />
+            <br />
+            <label style={{ color: "white", fontSize: "35px" }}>
+              Number of answers:
+            </label>
+            <input
+              class="j"
+              className="col-xs-offset-2"
+              name="nb_ans"
+              required="required"
+              placeholder="Enter number..."
+              value={addFormData.nb_ans}
+              onChange={handleAddFormChange}
+              style={{ fontSize: "40px" }}
+            />
+            <br />
+            <br />
+            <label style={{ color: "white", fontSize: "35px" }}>Answers:</label>
+            {InputAnswers(5)}
+            <br />
+            <br />
+            <label style={{ color: "white", fontSize: "35px" }}>
+              Correct answer:
+            </label>
+            <select
+              value={addFormData.correctAnswer}
+              onChange={handleAddFormChange}
+              class="j"
+              style={{ fontSize: "40px" }}
+            >
+              {DropList(5)}
+            </select>
+            {/* <button type="button" onClick={handleCancelClick}>
+              Cancel
+            </button> */}
+          </div>
+        </form>
+      </div>
       <button type="submit">+</button>
     </div>
   );

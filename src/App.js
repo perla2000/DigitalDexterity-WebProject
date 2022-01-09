@@ -106,23 +106,17 @@ class App extends Component {
                       </div>
                     </Route>
                     <Route exact path="/admin">
-                  
-                        <AdminHome />
-                      
+                      <AdminHome />
                     </Route>
-<<<<<<< HEAD
                     <Route exact path="/modAd">
                       <AdminPage />
                     </Route>
 
-=======
-                  
                     <Route exact path="/creatTest">
-                  <CreateTest/>
-
-              </Route>
+                      <CreateTest />
+                    </Route>
                     <Route exact path="/modAd">
-                      <AdminPage 
+                      <AdminPage
                       // Tests={this.props.test}
                       // postTest={this.props.postTest}
                       />
@@ -132,7 +126,6 @@ class App extends Component {
                         <AdminUser />
                       </div>
                     </Route>
->>>>>>> c7c8377df1dd8059a043bfa85d66e79f50d6ca8d
                     <Route exact path="/pptest">
                       <PPTests />
                     </Route>
@@ -148,7 +141,7 @@ class App extends Component {
                     <Route exact path="/popup">
                       <PopUpshow />
                     </Route>
-                    
+
                     <Route exact path="/profile">
                       <Profile Tests={this.props.test} />
                     </Route>
