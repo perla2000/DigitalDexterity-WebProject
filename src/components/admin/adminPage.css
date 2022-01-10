@@ -19,23 +19,17 @@ td {
 }
 
 th {
-  color:white;
-  background-color: rgb(14,64,94);
+  color: white;
+  background-color: rgb(14, 64, 94);
 }
 
 td {
   background-color: rgb(231, 244, 252);
 }
 
-
 form {
   display: flex;
   gap: 5px;
-}
-
-form td:last-child {
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .hello {
@@ -58,7 +52,7 @@ button {
 }
 
 .h {
-  color:white;
+  color: rgb(255, 255, 255);
   margin-top: 50px;
   margin-left: 46%;
   font-size: 40px;

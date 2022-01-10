@@ -4,8 +4,9 @@ import { TestUser } from "../../shared/database.js";
 import { Tests } from "../../shared/database.js";
 import { Users } from "../../shared/database.js";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import AdminPage from "./adminPage";
-
+import AdminHome from "./adminHomePage";
 class CreateTest extends Component {
   constructor(props) {
     super(props);
@@ -13,13 +14,29 @@ class CreateTest extends Component {
       Tests,
       TestUser,
       Users,
+      title: "",
+      duration: "",
+      date: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  toggleCreate = () => {
-    this.props.history.push("/modAd");
-  };
+  // toggleCreate = () => {
+  //   this.props.history.push("/modAd");
+  // };
+  handleChange(event) {
+    const name = event.targ
+    // this.setState({event.target.name: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
   render() {
     return (
+      <form>
       <div class="wrapper">
         <div class="left">
           <h4>Administrator </h4>
@@ -106,8 +123,8 @@ class CreateTest extends Component {
                     <div class="data">
                       <br />
                       <br />
-
                       <input
+                        value={this.state.title} onChange={this.handleChange}
                         type="text"
                         name="quizTitle"
                         required="required"
@@ -126,10 +143,10 @@ class CreateTest extends Component {
                     <div class="data">
                       <br />
                       <br />
-
                       <input
+                        value={this.state.duration} onChange={this.handleChange}
                         type="text"
-                        name="quizTitle"
+                        name="duration"
                         required="required"
                         placeholder="Enter a Title..."
                         style={{ width: "100%", height: "30%" }}
@@ -146,10 +163,11 @@ class CreateTest extends Component {
                     <div class="data">
                       <br />
                       <br />
-
+                      
                       <input
+                        value={this.state.date} onChange={this.handleChange}
                         type="text"
-                        name="quizTitle"
+                        name="date"
                         required="required"
                         placeholder="Enter a Title..."
                         style={{ width: "100%", height: "30%" }}
@@ -158,7 +176,7 @@ class CreateTest extends Component {
                     
                   </div>
                   <button
-                    onClick={() => this.toggleCreate()}
+                    onClick={() => this.handleSubmit()}
                     type="submit"
                     value="Submit"
                     style={{width:"40%",fontSize:"20px"}}
@@ -168,14 +186,15 @@ class CreateTest extends Component {
                   </button>
                   
                 </div>
-                {!this.state.seen ? <CreateTest toggle={this.togglePop} /> : <AdminPage />}
+                {/* {!this.state.seen ? <AdminHome toggle={this.toggleCreate} /> : <AdminPage />} */}
               </div>
             </div>
           </div>
         </div>
       </div>
+      </form>
     );
   }
 }
 
-export default CreateTest;
+export default withRouter(CreateTest);;

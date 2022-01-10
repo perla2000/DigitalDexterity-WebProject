@@ -7,60 +7,70 @@ const EditableRow = ({
 }) => {
   return (
     <tr>
+           <td style={{width:"fit-content"}} >
+             <button type="submit" >Save</button>
+        <button  type="button" onClick={handleCancelClick}>
+          Cancel
+        </button>
+        </td>
       <td>
-        <input
+        <input className="col-xs-offset-2"
           type="text"
           required="required"
           placeholder="Enter a question..."
           name="question"
+          style={{width:"fit-content", fontSize:"25px"}}
           value={editFormData.questions}
           onChange={handleEditFormChange}
         ></input>
       </td>
       <td>
-        <input
+        <input className="col-xs-offset-2"
           type="text"
           required="required"
           placeholder="Enter an answer..."
-          name="answer1"
-          value={editFormData.address}
+          name="answer"
+          style={{width:"fit-content", fontSize:"25px"}}
+          value={editFormData.answers}
           onChange={handleEditFormChange}
         ></input>
       </td>
       <td>
-        <input
+        <input className="col-xs-offset-2"
           type="text"
           required="required"
           placeholder="Enter an answer ..."
           name="answer2"
-          value={editFormData.phoneNumber}
+          style={{width:"fit-content", fontSize:"25px"}}
+          value={editFormData.answers}
           onChange={handleEditFormChange}
         ></input>
       </td>
       <td>
-        <input
+        <input className="col-xs-offset-2"
+        style={{width:"fit-content", fontSize:"25px"}}
           type="text"
           required="required"
           placeholder="Enter an answer..."
           name="answer3"
-          value={editFormData.email}
+          value={editFormData.answers}
           onChange={handleEditFormChange}
         ></input>
-                <input
+        </td>
+        <td>
+                <input className="col-xs-offset-2"
           type="text"
           required="required"
+          style={{width:"fit-content", fontSize:"25px"}}
           placeholder="Enter an answer..."
           name="correctAnswer"
-          value={editFormData.email}
+          value={editFormData.answers}
           onChange={handleEditFormChange}
         ></input>
+  
+
       </td>
-      <td>
-        <button type="submit">Save</button>
-        <button type="button" onClick={handleCancelClick}>
-          Cancel
-        </button>
-      </td>
+     
     </tr>
   );
 };

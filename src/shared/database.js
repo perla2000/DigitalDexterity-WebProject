@@ -23,7 +23,7 @@ export const TestUser = [
     idTestUser: 0,
     idUser: 2,
     idTest: 1,
-    code: "cc",
+    code: "webTest",
     date: "2/1/2022",
     noteTest: 10,
   },
@@ -218,6 +218,12 @@ export const Answers = [
       "Create layouts for slides, handouts, and notes using the Master Layout dialog box in slide master view",
   },
   {
+    idAnswer: 37,
+    idAnswerQuestion: 1,
+    description:
+      "Use the Master Layout dialog box in slide master view",
+  },
+  {
     idAnswer: 2,
     idAnswerQuestion: 1,
     description:
@@ -308,7 +314,7 @@ export const Answers = [
   },
   {
     idAnswer: 18,
-    idAnswerQuestion: 6,
+    idAnswerQuestion: 5,
     description: "Your E-Mail program",
   },
   {

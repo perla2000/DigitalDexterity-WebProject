@@ -35,7 +35,7 @@ import { fetchTests } from "./redux/ActionCreators";
 import { postTest } from "./redux/ActionCreators";
 import AdminUser from "./components/admin/adminUser.js";
 import CreateTest from "./components/admin/adminCreateTest.js";
-
+import Vide from "./components/admin/adminCreateTest.js";
 // const mapStateToProps = state => {
 
 //   return {
@@ -65,7 +65,16 @@ class App extends Component {
   // componentDidMount(){
   //   this.props.fetchTests();
   // }
+
   render() {
+    // const testById = ({match}) => {
+    //   return (
+    //     <div>
+    //         <Timer />
+    //         <Database idTest={match.params.idTest}/>
+    //     </div>
+    //   )
+    // }
     return (
       <Router>
         {/* <div>
@@ -109,6 +118,9 @@ class App extends Component {
                     </Route>
                     <Route exact path="/modAd">
                       <AdminPage />
+                    </Route>
+                    <Route exact path="/vide">
+                      <Vide />
                     </Route>
 
                     <Route exact path="/creatTest">

@@ -1,20 +1,32 @@
 import React from "react";
 import PopUp from "./PopUp";
 import "./styles.css";
-import Tests from "./test/Tests";
+import Database from "./test/testdatabase";
 import { withRouter } from "react-router-dom";
+import { TestUser } from "../shared/database.js";
+import { Tests } from "../shared/database.js";
+import { Users } from "../shared/database.js";
 
 class PopUpshow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      Tests,
+      TestUser,
+      Users,
+      code: "",
+    };
   }
 
   state = {
     seen: false,
+    
   };
 
   togglePop = () => {
-    this.props.history.push("/test");
+    // var IdTest=TestUser.filter((tu)=>(tu.idUser==Users[0].idUser)).filter((tu)=>(tu.code==this.code))[0].idTest;
+    
+    this.props.history.push("/test/");
   };
 
   render() {
@@ -46,12 +58,17 @@ class PopUpshow extends React.Component {
               <br />
               <br />
               <br />
-              <input style={{ width: "80%" }} type="text" name="name" />
+              <input
+                style={{ width: "80%" }}
+                type="text"
+                name="name"
+                
+              />
             </label>
             <br />
             <button onClick={this.togglePop}>Start Test</button>
           </div>
-          {!this.state.seen ? <PopUp toggle={this.togglePop} /> : <Tests />}
+          {!this.state.seen ? <PopUp toggle={this.togglePop} /> : <Database />}
         </div>
       </div>
     );
