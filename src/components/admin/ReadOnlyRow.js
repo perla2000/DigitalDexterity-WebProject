@@ -13,12 +13,14 @@ const ReadOnlyRow = ({
         <td>
           <button
             type="button"
+            style={{ widht: "fit-content", margin: "auto", marginLeft: "60px" }}
             onClick={(event) => handleEditClick(event, question)}
           >
             Edit
           </button>
           <button
             type="button"
+            style={{ widht: "fit-content", margin: "auto", marginLeft: "10px" }}
             onClick={() => handleDeleteClick(question.idQuestion)}
           >
             Delete

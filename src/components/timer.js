@@ -33,7 +33,7 @@ function Timer() {
   }
 
   function clearTimer(endtime) {
-    setTimer("00:00:10");
+    setTimer("00:15:00");
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
@@ -45,7 +45,7 @@ function Timer() {
 
   function getDeadlineTime() {
     let deadline = new Date();
-    deadline.setSeconds(deadline.getSeconds() + 10);
+    deadline.setMinutes(deadline.getMinutes() + 15);
     return deadline;
   }
 

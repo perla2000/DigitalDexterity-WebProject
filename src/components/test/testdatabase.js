@@ -34,26 +34,23 @@ class Database extends Component {
   // }
 
   render() {
-    const returnScore=()=> {
-      var result=0;
+    const returnScore = () => {
+      var result = 0;
       for (var i = 0; i < AnswerQuestion.length; ++i) {
-        var ele = document.getElementsByName(AnswerQuestion[i].idAnswerQuestion);
+        var ele = document.getElementsByName(
+          AnswerQuestion[i].idAnswerQuestion
+        );
         for (var j = 0; j < ele.length; ++j) {
           if (ele[j].checked && ele[j].id == AnswerQuestion[i].correcte) {
             result += 1;
           }
         }
       }
-     return(result)
+      return result;
     };
     return (
-      
       <html>
         <body>
-        <p>
-          
-            Your grade is: <span id="grade">{returnScore()}</span>
-          </p>
           <div class="main">
             <br />
             <Timer />
@@ -67,7 +64,6 @@ class Database extends Component {
               >
                 {/* {Tests.filter((t)=>t.idTest==this.props.idTest)[0].quizTitle} */}
                 {Tests[0].quizTitle}
-                
               </h1>
             </div>
             <form id="form1">

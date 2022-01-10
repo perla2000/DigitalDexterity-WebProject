@@ -60,7 +60,9 @@ class Navv extends Component {
             </UncontrolledDropdown>
           </Nav>
         </Collapse>
-        <img src={"./assets/logo.png"} style={{ width: 40, height: 40 }} />
+        <NavLink href="/login">
+          <img src={"./assets/logo.png"} style={{ width: 40, height: 40 }} />
+        </NavLink>
 
         <NavLink className="nav-link" to="">
           <NavLink href="/profile" style={{ color: "white" }}>
