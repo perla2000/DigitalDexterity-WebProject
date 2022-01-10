@@ -23,18 +23,17 @@ const useLogForm = (callback, validate) => {
 
   const handleSubmit = (e) => {
     // history.push("/admin");
-    if (values.username == "admin" && values.password == "admin" && values.email == "admin@gmail.com") {
-  
+    if (
+      values.username == "admin" &&
+      values.password == "admin" &&
+      values.email == "admin@gmail.com"
+    ) {
       history.push("/admin");
-    }else{
+    } else {
       setErrors(validate(values));
-    setIsSubmitting(true);
-    e.preventDefault();
+      setIsSubmitting(true);
+      e.preventDefault();
     }
-
-
-    
-    
   };
 
   useEffect(() => {

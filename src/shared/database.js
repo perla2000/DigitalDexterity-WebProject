@@ -2,7 +2,7 @@ export const Users = [
   {
     id: 2,
     username: "LeaHarrouz",
-    password: "lea0000",
+    password: "6yhfrsss",
     email: "lea.harrouz@gmail.com",
   },
   {
@@ -220,8 +220,7 @@ export const Answers = [
   {
     idAnswer: 37,
     idAnswerQuestion: 1,
-    description:
-      "Use the Master Layout dialog box in slide master view",
+    description: "Use the Master Layout dialog box in slide master view",
   },
   {
     idAnswer: 2,

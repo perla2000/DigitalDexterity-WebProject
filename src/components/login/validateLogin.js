@@ -4,10 +4,9 @@ import { Users } from "../../shared/database.js";
 export default function validateLogin(values) {
   let errors = {};
   const userInf = Users.filter((u) => u.username == values.username);
-   if (!values.username.trim()) {
+  if (!values.username.trim()) {
     errors.username = "Username required";
-  }
-  else if (!(userInf[0].username == values.username)) {
+  } else if (!(userInf[0].username == values.username)) {
     errors.name = "Enter a valid name";
   }
 
@@ -23,6 +22,8 @@ export default function validateLogin(values) {
     errors.password = "Password needs to be 6 characters or more";
   } else if (!(userInf[0].password == values.password)) {
     errors.password = "Invalid password.";
+  } else {
+    localStorage.setItem("userId", userInf[0].id);
   }
   return errors;
 }
