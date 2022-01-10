@@ -8,8 +8,10 @@ const EditableRow = ({
   return (
     <tr>
            <td style={{width:"fit-content"}} >
-             <button type="submit" >Save</button>
-        <button  type="button" onClick={handleCancelClick}>
+             <button type="submit"  
+            style={{ widht: "fit-content", margin: "auto", marginLeft: "60px" }} >Save</button>
+        <button   type="button"
+            style={{ widht: "fit-content", margin: "auto", marginLeft: "60px" }} onClick={handleCancelClick}>
           Cancel
         </button>
         </td>

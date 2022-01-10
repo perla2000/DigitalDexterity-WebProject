@@ -35,7 +35,7 @@ import { fetchTests } from "./redux/ActionCreators";
 import { postTest } from "./redux/ActionCreators";
 import AdminUser from "./components/admin/adminUser.js";
 import CreateTest from "./components/admin/adminCreateTest.js";
-import Vide from "./components/admin/adminCreateTest.js";
+import Vide from "./components/admin/adminTable.js";
 // const mapStateToProps = state => {
 
 //   return {

@@ -48,7 +48,8 @@ const AdminPage = () => {
     const fieldValue = event.target.value;
         
     const newFormData = { ...editFormData };
-    if(fieldName[0]=="a"){newFormData[addFormData.answers]=addFormData.answers.push(fieldValue)}else{
+    if(fieldName[0]=="a"){addFormData.answers.push(fieldValue);
+      newFormData[addFormData.answers]=addFormData.answers}else{
     newFormData[fieldName] = fieldValue;}
 
     setEditFormData(newFormData);
@@ -105,7 +106,7 @@ const AdminPage = () => {
   };
   const DropList = ( nb_ans,addFormData ) => {
     var op = [];
-    for (var i = 1; i < nb_ans + 1; ++i) {
+    for (var i = 1; i < nb_ans; ++i) {
       op.push(<option value={i}>{i}</option>);
     }
     return op;
@@ -116,11 +117,11 @@ const AdminPage = () => {
       inputs.push(
         <input
         className="col-xs-offset-2"
-          value={(a)=>{return(addFormData.answers.push(a))}}
+          value={(a)=>{addFormData.answers.push(a);return(a)}}
           
           required="required"
           placeholder="Enter an answer..."
-          name="answers${i}"
+          name="answers"
           style={{width:"auto", fontSize:"25px"}}
           onChange={handleAddFormChange}
         />
@@ -237,7 +238,7 @@ const AdminPage = () => {
         
       <h2 class="h">Add a question</h2>
     
-      <form class="hello" onSubmit={() => this.handleAddFormSubmit}>
+      <form class="hello" onSubmit={handleAddFormSubmit}>
         <div>
         <label style={{fontSize:"35px" }}>Question:</label>
         <input
@@ -276,7 +277,7 @@ const AdminPage = () => {
           onChange={handleAddFormChange}
           class="j"
         >
-          {DropList(5)}
+          {DropList(addFormData.nb_ans)}
 
         </select>
         </div>

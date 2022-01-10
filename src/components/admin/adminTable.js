@@ -1,10 +1,27 @@
 // import EditableRow from "./components/EditableRow.js";
 import "./adminPage.css";
-import Object from "../shared/object";
-
+import Object from "../../shared/object";
+import { nanoid } from "nanoid";
+import React, { useState, Fragment } from "react";
 const Test=Object.Powerpoint;
 const Vide = () => {
-  const [Questions, setQuestions] = useState(Object.Powerpoint.questions);
+  const [Questions, setQuestions] = useState( [
+    {
+      id: 0,
+      description:
+        "",
+      answers: [
+        [
+          "",
+          false,
+        ],
+        [
+          "",
+          true,
+        ],
+        ["", false],
+      ],
+    }]);
 
   const data = {
     question: "",

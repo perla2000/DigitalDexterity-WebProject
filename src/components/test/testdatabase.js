@@ -6,6 +6,7 @@ import { Questions } from "../../shared/database.js";
 import { Answers } from "../../shared/database.js";
 import { AnswerQuestion } from "../../shared/database.js";
 import Timer from "../../components/timer.js";
+import{Link} from"react-router-dom";
 
 class Database extends Component {
   constructor(props) {
@@ -19,35 +20,34 @@ class Database extends Component {
     };
   }
 
-  // returnScore(event) {
-  //   var result = 0;
-  //   for (var i = 0; i < AnswerQuestion.length; ++i) {
-  //     var ele = document.getElementsByName(AnswerQuestion[i].idAnswerQuestion);
-  //     for (var j = 0; j < ele.length; ++j) {
-  //       if (ele[j].checked && ele[j].id == AnswerQuestion[i].correcte) {
-  //         result += 1;
-  //       }
-  //     }
-  //   }
-  //   this.setState({ score: result });
-  //   event.preventDefault();
-  // }
-
-  render() {
-    const returnScore = () => {
-      var result = 0;
-      for (var i = 0; i < AnswerQuestion.length; ++i) {
-        var ele = document.getElementsByName(
-          AnswerQuestion[i].idAnswerQuestion
-        );
-        for (var j = 0; j < ele.length; ++j) {
-          if (ele[j].checked && ele[j].id == AnswerQuestion[i].correcte) {
-            result += 1;
-          }
+  returnScore(event) {
+    var result = 0;
+    for (var i = 0; i < AnswerQuestion.length; ++i) {
+      var ele = document.getElementsByName(AnswerQuestion[i].idAnswerQuestion);
+      for (var j = 0; j < ele.length; ++j) {
+        if (ele[j].checked && ele[j].id == AnswerQuestion[i].correcte) {
+          result += 1;
         }
       }
-      return result;
-    };
+    }
+    alert("your grade is:"+result);
+    
+    
+  }
+
+  render() {
+    // const returnScore=()=> {
+    //   var result=0;
+    //   for (var i = 0; i < AnswerQuestion.length; ++i) {
+    //     var ele = document.getElementsByName(AnswerQuestion[i].idAnswerQuestion);
+    //     for (var j = 0; j < ele.length; ++j) {
+    //       if (ele[j].checked && ele[j].id == AnswerQuestion[i].correcte) {
+    //         result += 1;
+    //       }
+    //     }
+    //   }
+    //  return(result)
+    // };
     return (
       <html>
         <body>
@@ -68,9 +68,7 @@ class Database extends Component {
             </div>
             <form id="form1">
               <div>
-                <p style={{ fontSize: "30px" }}>
-                  Your grade is: <span id="grade">{this.state.score}</span>
-                </p>
+
                 <p id="grade2"></p>
                 <fieldset>
                   {Questions.filter((q) => q.idTest == Tests[0].idTest).map(
@@ -95,16 +93,17 @@ class Database extends Component {
                       </div>
                     )
                   )}
-
+                <Link to="/home">
                   <button
-                    //onClick={() => this.returnScore()}
-                    href="/home"
+                    onClick={() => this.returnScore()}
+                    
                     type="submit"
                     value="Submit"
                     style={{ marginBottom: "30px" }}
                   >
                     Submit
                   </button>
+                  </Link>
                 </fieldset>
               </div>
             </form>

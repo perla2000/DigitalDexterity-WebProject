@@ -5,6 +5,7 @@ import { Tests } from "../../shared/database.js";
 import { Users } from "../../shared/database.js";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import { Form, FormGroup, Label, Input, Col, Button, Container } from "reactstrap";
 import AdminPage from "./adminPage";
 import AdminHome from "./adminHomePage";
 class CreateTest extends Component {
@@ -25,18 +26,18 @@ class CreateTest extends Component {
   //   this.props.history.push("/modAd");
   // };
   handleChange(event) {
-    const name = event.targ
-    // this.setState({event.target.name: event.target.value});
+    const name = event.target.name
+    this.setState({[name]: event.target.value});
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
+    alert('A name was submitted: ' + this.state);
+   
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
       <div class="wrapper">
         <div class="left">
           <h4>Administrator </h4>
@@ -114,6 +115,7 @@ class CreateTest extends Component {
                   
                     </div>
                   </div>
+              
                   <div class="projects_data">
                     <div class="data">
                       <p>
@@ -126,7 +128,7 @@ class CreateTest extends Component {
                       <input
                         value={this.state.title} onChange={this.handleChange}
                         type="text"
-                        name="quizTitle"
+                        name="title"
                         required="required"
                         placeholder="Enter a Title..."
                         style={{ width: "100%", height: "30%" }}
@@ -134,6 +136,7 @@ class CreateTest extends Component {
                     </div>
                     
                   </div>
+
                   <div class="projects_data">
                     <div class="data">
                       <p>
@@ -175,16 +178,18 @@ class CreateTest extends Component {
                     </div>
                     
                   </div>
+                  <Link to="/vide">
                   <button
                     onClick={() => this.handleSubmit()}
                     type="submit"
                     value="Submit"
+                     
                     style={{width:"40%",fontSize:"20px"}}
                     
                   >
                     Save & continue
                   </button>
-                  
+                  </Link>
                 </div>
                 {/* {!this.state.seen ? <AdminHome toggle={this.toggleCreate} /> : <AdminPage />} */}
               </div>
