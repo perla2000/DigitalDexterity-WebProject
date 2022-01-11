@@ -21,7 +21,7 @@ connection.once("open", () => {
 app.listen(PORT, () => {
   console.log("Server is running on port:" + PORT);
 });
-
+const cors= require("cors")
 const TestRouter = require("./routes/TestRoutes");
 const usersRouter = require("./routes/UserRoutes");
 const questionRouter = require("./routes/Question_Router");
@@ -37,5 +37,5 @@ app.use("/answers", answerRouter);
 app.use("/questionAnswers", QanswerRouter);
 app.use("/testUser", TestUserRouter);
 app.use("/testAnswer", TestAnswerRouter);
-
+app.use(cors());
 module.exports = app;

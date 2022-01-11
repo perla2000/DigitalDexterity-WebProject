@@ -2,26 +2,23 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var TestSchema = new Schema({
-  description: {
+  quizTitle: {
     type: String,
     required: true,
   },
-  Date_ouverture: {
+  dateOuverture: {
     type: String,
     required: true,
   },
-  Date_modifie: {
+  dateModification: {
     type: String,
     required: true,
   },
-  Duree: {
+  duree: {
     type: Number,
     required: true,
-  },
-  TestUser: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "test_user",
-  },
+  }
+
 });
 
 const Test = mongoose.model("Test", TestSchema);

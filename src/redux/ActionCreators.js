@@ -13,7 +13,7 @@ export const postTest =
     //console.log("Test ", newTest);
     // const tests = 'Tests ' + localStorage.getItem('token');
    
-    return fetch(baseUrl + "tests", {
+    return (baseUrl + "test", {
       method: "POST",
       body: JSON.stringify(newTest),
       headers: {
@@ -58,7 +58,7 @@ export const addTest = (test) => ({
 export const fetchTests = () => (dispatch) => {
 
 
-  return fetch(baseUrl + "tests")
+  return fetch(baseUrl + "test")
     .then(
       (response) => {
         if (response.ok) {
