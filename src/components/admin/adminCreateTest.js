@@ -31,7 +31,12 @@ class CreateTest extends Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state);
+    
+    this.props.postTest( this.state.date,this.state.duration,
+    
+    this.state.title,
+    );
+   
    
   }
 

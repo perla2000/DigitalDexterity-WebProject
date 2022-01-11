@@ -1,134 +1,169 @@
-import React, { Component } from 'react';
-import Home from './HomeComponent';
-import About from './AboutComponent';
-import Menu from './MenuComponent';
-import Contact from './ContactComponent';
-import DishDetail from './DishDetailComponent';
-import Favorites from './FavoriteComponent';
-import Header from './HeaderComponent';
-import Footer from './FooterComponent';
-import Footer from './Footer';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { postComment, postFeedback, fetchDishes, fetchComments, fetchPromos, fetchLeaders, loginUser, logoutUser, fetchFavorites, postFavorite, deleteFavorite } from '../redux/ActionCreators';
-import { actions } from 'react-redux-form';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import React, { Component } from "react";
+import Menu from "../components/HomePhotos.js";
 
+import Navv from "../components/Navv.js";
+import "../App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
+import { connect } from "react-redux";
+import Carousel from "../components/Carousel.js";
+import Footer from "../components/Footer.js";
+
+import Welcome from "../components/WelcomePage.js";
+import ExcelTest from "../components/test/ExcelTest.js";
+import PPTests from "../components/test/PPTests.js";
+import Trying from "../components/Trying.js";
+import Profile from "../components/Profile.js";
+import AdminPage from "../components/admin/adminPage.js";
+import FormSignup from "../components/login/FormSignup";
+import Form from "../components/login/Form";
+import LogForm from "../components/login/LogForm";
+import Nav2 from "../components/Nav2.js";
+import { Nav } from "reactstrap";
+import { TestUser } from "../shared/database.js";
+import { Tests } from "../shared/database.js";
+import { Users } from "../shared/database.js";
+import PopUpshow from "../components/PopUpshow.js";
+import Database from "../components/test/testdatabase.js";
+import AdminHome from "../components/admin/adminHomePage";
+
+import { fetchTests } from "../redux/ActionCreators";
+import { postTest } from "../redux/ActionCreators";
+import AdminUser from "../components/admin/adminUser.js";
+import CreateTest from "../components/admin/adminCreateTest.js";
+import Vide from "../components/admin/adminTable.js";
 const mapStateToProps = state => {
-    return {
-      dishes: state.dishes,
-      comments: state.comments,
-      promotions: state.promotions,
-      leaders: state.leaders,
-      favorites: state.favorites,
-      auth: state.auth
-    }
-}
 
-const mapDispatchToProps = (dispatch) => ({
-  postComment: (dishId, rating, comment) => dispatch(postComment(dishId, rating, comment)),
-  fetchDishes: () => {dispatch(fetchDishes())},
-  resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
-  fetchComments: () => {dispatch(fetchComments())},
-  fetchPromos: () => {dispatch(fetchPromos())},
-  fetchLeaders: () => dispatch(fetchLeaders()),
-  postFeedback: (feedback) => dispatch(postFeedback(feedback)),
-  loginUser: (creds) => dispatch(loginUser(creds)),
-  logoutUser: () => dispatch(logoutUser()),
-  fetchFavorites: () => dispatch(fetchFavorites()),
-  postFavorite: (dishId) => dispatch(postFavorite(dishId)),
-  deleteFavorite: (dishId) => dispatch(deleteFavorite(dishId))
-});
+  return {
+
+    Tests: state.tests,
+    
+  //questions:
+
+  }
+
+}
+const mapDispatchToProps = dispatch => ({
+
+postTest:( dateOuverture, duree, quizTitle)  =>dispatch(postTest(dateOuverture, duree, quizTitle)),
+fetchTests: () => {dispatch(fetchTests())},
+})
+//Tests={this.props.test} postTest={this.props.postTest} hyde bl <>
 
 class Main extends Component {
-
-  componentDidMount() {
-    this.props.fetchDishes();
-    this.props.fetchComments();
-    this.props.fetchPromos();
-    this.props.fetchLeaders();
-    this.props.fetchFavorites();
+  constructor(props) {
+    super(props);
+    this.state = {
+      Tests,
+      TestUser,
+      Users,
+    };
+  }
+  componentDidMount(){
+    this.props.fetchTests();
   }
 
   render() {
-
-    const HomePage = () => {
-      return(
-        <Home dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
-          dishesLoading={this.props.dishes.isLoading}
-          dishesErrMess={this.props.dishes.errMess}
-          promotion={this.props.promotions.promotions.filter((promo) => promo.featured)[0]}
-          promosLoading={this.props.promotions.isLoading}
-          promosErrMess={this.props.promotions.errMess}
-          leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
-          leaderLoading={this.props.leaders.isLoading}
-          leaderErrMess={this.props.leaders.errMess}
-        />
-      );
-    }
-
-    // The "match" prop is provided by the React Router along with "location" and "history", see:
-    //https://www.freecodecamp.org/news/hitchhikers-guide-to-react-router-v4-4b12e369d10/
-    const DishWithId = ({match}) => {
-      return(
-        this.props.auth.isAuthenticated && this.props.favorites.favorites.dishes
-        ?
-        <DishDetail dish={this.props.dishes.dishes.filter((dish) => dish._id === match.params.dishId)[0]}
-          isLoading={this.props.dishes.isLoading}
-          errMess={this.props.dishes.errMess}
-          comments={this.props.comments.comments.filter((comment) => comment.dish === match.params.dishId)}
-          commentsErrMess={this.props.comments.errMess}
-          postComment={this.props.postComment}
-          favorite={this.props.favorites.favorites.dishes.some((dish) => dish._id === match.params.dishId)}
-          postFavorite={this.props.postFavorite}
-          />
-        :
-        <DishDetail dish={this.props.dishes.dishes.filter((dish) => dish._id === match.params.dishId)[0]}
-          isLoading={this.props.dishes.isLoading}
-          errMess={this.props.dishes.errMess}
-          comments={this.props.comments.comments.filter((comment) => comment.dish === match.params.dishId)}
-          commentsErrMess={this.props.comments.errMess}
-          postComment={this.props.postComment}
-          favorite={false}
-          postFavorite={this.props.postFavorite}
-          />
-      );
-    }
-
-    const PrivateRoute = ({ component: Component, ...rest }) => (
-      <Route {...rest} render={(props) => (
-        this.props.auth.isAuthenticated
-          ? <Component {...props} />
-          : <Redirect to={{
-              pathname: '/home',
-              state: { from: props.location }
-            }} />
-      )} />
-    );
-
+    // const testById = ({match}) => {
+    //   return (
+    //     <div>
+    //         <Timer />
+    //         <Database idTest={match.params.idTest}/>
+    //     </div>
+    //   )
+    // }
     return (
-      <div>
-        <Header auth={this.props.auth} 
-          loginUser={this.props.loginUser} 
-          logoutUser={this.props.logoutUser} 
-          />   
-        <TransitionGroup>
-          <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
-            <Switch>
-              <Route path="/home" component={HomePage} />
-              <Route exact path='/aboutus' component={() => <About leaders={this.props.leaders} />} />
-              <Route exact path="/menu" component={() => <Menu dishes={this.props.dishes} />} />
-              <Route path="/menu/:dishId" component={DishWithId} />
-              <PrivateRoute exact path="/favorites" component={() => <Favorites favorites={this.props.favorites} deleteFavorite={this.props.deleteFavorite} />} />
-              <Route exact path="/contactus" component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
-              <Redirect to="/home" />
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
-        <Footer />
-      </div>
+      <Router>
+        {/* <div>
+          <Timer />
+          <Database />
+        </div> */}
+        {
+          <div className="App" style={{ objectFit: "cover" }}>
+            {
+              <div
+                style={{
+                  // backgroundImage: "url(" + "assets/white_bg.jpg" + ")",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "100% 100%",
+                  height: 1000,
+                }}
+              >
+                <div>
+                  <Switch>
+                    <Route exact path="/">
+                      <Welcome />
+                    </Route>
+                    {/* <Route exact path="/view_admin_test">
+                    </Route> */}
+                    <Route exact path="/login">
+                      <LogForm />
+                    </Route>
+                    <Route exact path="/register">
+                      <Form />
+                    </Route>
+                    <Route exact path="/home">
+                      <div>
+                        <Navv />
+                        <Carousel />
+                        <Trying />
+                        <Footer />
+                      </div>
+                    </Route>
+                    <Route exact path="/admin">
+                      <AdminHome />
+                    </Route>
+                    <Route exact path="/modAd">
+                      <AdminPage />
+                    </Route>
+                    <Route exact path="/vide">
+                      <Vide />
+                    </Route>
+
+                    <Route exact path="/creatTest">
+                      <CreateTest Tests={this.props.test}
+                      postTest={this.props.postTest}/>
+                    </Route>
+                    <Route exact path="/modAd">
+                      <AdminPage
+        
+                      />
+                    </Route>
+                    <Route exact path="/view_admin_test">
+                      <div>
+                        <AdminUser />
+                      </div>
+                    </Route>
+                    <Route exact path="/pptest">
+                      <PPTests />
+                    </Route>
+                    <Route exact path="/extest">
+                      <ExcelTest />
+                    </Route>
+                    <Route exact path="/test">
+                      <div>
+                        <Database />
+                      </div>
+                    </Route>
+                    <Route exact path="/popup">
+                      <PopUpshow />
+                    </Route>
+
+                    <Route exact path="/profile">
+                      <Profile Tests={this.props.test} />
+                    </Route>
+                  </Switch>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </Router>
     );
   }
 }
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default  withRouter(connect(mapStateToProps,mapDispatchToProps)(Main));

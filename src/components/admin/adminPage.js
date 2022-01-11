@@ -22,8 +22,9 @@ const AdminPage = () => {
 
   const data = {
     question: "",
-    nb_ans: 1,
-    answers: [],
+    answer1: "",
+    answer2: "",
+    answer3: "",
     correctAnswer: 0,
   };
   const [addFormData, setAddFormData] = useState(data);
@@ -35,55 +36,60 @@ const AdminPage = () => {
   const handleAddFormChange = (event) => {
     event.preventDefault();
     const fieldName = event.target.getAttribute("name"); //gets the name of every attrivbute
+   
     const fieldValue = event.target.value;
     const newFormData = { ...addFormData };
     newFormData[fieldName] = fieldValue;
     setAddFormData(newFormData);
   };
-  console.log();
+  
   const handleEditFormChange = (event) => {
     event.preventDefault();
 
     const fieldName = event.target.getAttribute("name");
     const fieldValue = event.target.value;
-        
+
     const newFormData = { ...editFormData };
-    if(fieldName[0]=="a"){addFormData.answers.push(fieldValue);
-      newFormData[addFormData.answers]=addFormData.answers}else{
-    newFormData[fieldName] = fieldValue;}
+    newFormData[fieldName] = fieldValue;
 
     setEditFormData(newFormData);
   };
   const handleAddFormSubmit = (event) => {
+   
     event.preventDefault();
     //   const newTest=this.props.postTest( "2/1/2022", 10,
     //     "13/2/2022",
     //     "Powerpoint",
     // )
+  
     const newQuestion = {
       id: nanoid(),
-      idTest: Tests.length() + 1,
+      idTest:  1,
       description: addFormData.question,
     };
-    const newAnswer=()=>{
-    var ans=[]
-    for (var i = 0; i < addFormData.nb_ans; ++i) {
-      ans.push({
-        idAnswerQuestion: newQuestion.id,
-        idQuestion: newQuestion.id,
-        description: addFormData.answers[i],
-      });
-    }return(ans)}
+    const newAnswer = () => {
+      var ans = [];
+      {alert("ss")
+        ans.append([{
+          id: nanoid(),
+          idAnswerQuestion: newQuestion.id,
+          description: addFormData.answer1,
+        },{
+          id: nanoid(),
+          idAnswerQuestion: newQuestion.id,
+          description: addFormData.answer2,}
+       ,  
+          {id: nanoid(),
+          idAnswerQuestion: newQuestion.id,
+          description: addFormData.answer3,
+        }]);
+      }
+      return ans;
+    };
     const newAnswerQuestion = {
-      idAnswerQuestion: newQuestion.id,
-      idQuestion: newQuestion.id,
-      correcte:
-        addFormData.newAnswers[
-          addFormData.answers.length() -
-            addFormData.nb_ans -
-            2 +
-            addFormData.correctAnswer
-        ],
+      idAnswerQuestion: newQuestion.idQuestion,
+      idQuestion: newQuestion.idQuestion,
+      correcte: ()=>{if (addFormData.correctAnswer==1){return(newAnswer[0].id);} if (addFormData.correctAnswer==2) {return(newAnswer[1].id)}if (addFormData.correctAnswer==3) return(newAnswer[2].id)}
     };
 
     // question:addFormData.question,
@@ -95,7 +101,7 @@ const AdminPage = () => {
     let q = [...Questions_];
     let aq = [...AnswerQuestion_];
     let a = [...Answers_];
-
+    console.log(q);
     q.push(newQuestion);
     aq.push(newAnswerQuestion);
     a.push(newAnswer);
@@ -103,31 +109,6 @@ const AdminPage = () => {
     setAnswerQuestion(aq);
     setAnswers(a);
     setAddFormData(data);
-  };
-  const DropList = ( nb_ans,addFormData ) => {
-    var op = [];
-    for (var i = 1; i < nb_ans; ++i) {
-      op.push(<option value={i}>{i}</option>);
-    }
-    return op;
-  };
-  const InputAnswers = ( nb_ans,addFormData,handleAddFormChange ) => {
-    var inputs = [];
-    for (var i = 0; i < nb_ans; ++i) {
-      inputs.push(
-        <input
-        className="col-xs-offset-2"
-          value={(a)=>{addFormData.answers.push(a);return(a)}}
-          
-          required="required"
-          placeholder="Enter an answer..."
-          name="answers"
-          style={{width:"auto", fontSize:"25px"}}
-          onChange={handleAddFormChange}
-        />
-      );
-    }
-    return inputs;
   };
 
   const handleEditFormSubmit = (event) => {
@@ -158,13 +139,19 @@ const AdminPage = () => {
 
     const formValues = {
       question: question.description,
-      nb_ans: ()=>{return(Answers.filter(
-        (a) => a.idAnswerQuestion == question.idQuestion
-      ).length())},
-      answers: ()=>{return(Answers.filter((a) => a.idAnswerQuestion == question.idQuestion))},
-      correctAnswer: ()=>{return(AnswerQuestion.filter(
-        (a) => a.idAnswerQuestion == question.idQuestion
-      )[0].correcte)},
+      nb_ans: () => {
+        return Answers.filter(
+          (a) => a.idAnswerQuestion == question.idQuestion
+        ).length();
+      },
+      answers: () => {
+        return Answers.filter((a) => a.idAnswerQuestion == question.idQuestion);
+      },
+      correctAnswer: () => {
+        return AnswerQuestion.filter(
+          (a) => a.idAnswerQuestion == question.idQuestion
+        )[0].correcte;
+      },
     };
 
     setEditFormData(formValues);
@@ -192,101 +179,119 @@ const AdminPage = () => {
     <div
       className="app-container"
       style={{
-        background:"white",
+        background: "white",
         position: "absolute",
-        
+
         objectFit: "cover",
       }}
     >
-        <form onSubmit={handleEditFormSubmit}>
-      <table>
-        <thead>
-          <tr>
-            <th width="500px">Actions</th>
-            <th>Question</th>
-            <th>Number Of Answers</th>
-            <th>Answers</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {Questions_.filter((q)=>(q.idTest==Tests[0].idTest)).map((question) => (
-            <Fragment>
-              {editQuestionId === question.idQuestion ? (
-            <EditableRow
-            editFormData={editFormData}
-            handleEditFormChange={handleEditFormChange}
-            handleCancelClick={handleCancelClick}
-          />
-        ) : (
-          <ReadOnlyRow
-            question={question}
-            Answers={Answers_}
-            AnswerQuestion={AnswerQuestion_}
-            handleEditClick={handleEditClick}
-            handleDeleteClick={handleDeleteClick}
-          />
-        )}
-            </Fragment>
-          ))}
-        </tbody>
-      </table>
+      <form onSubmit={handleEditFormSubmit}>
+        <table>
+          <thead>
+            <tr>
+              <th width="500px">Actions</th>
+              <th>Question</th>
+              <th>Number Of Answers</th>
+              <th>Answers</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {Questions_.filter((q) => q.idTest == Tests[0].idTest).map(
+              (question) => (
+                <Fragment>
+                  {editQuestionId === question.idQuestion ? (
+                    <EditableRow
+                      editFormData={editFormData}
+                      handleEditFormChange={handleEditFormChange}
+                      handleCancelClick={handleCancelClick}
+                    />
+                  ) : (
+                    <ReadOnlyRow
+                      question={question}
+                      Answers={Answers_}
+                      AnswerQuestion={AnswerQuestion_}
+                      handleEditClick={handleEditClick}
+                      handleDeleteClick={handleDeleteClick}
+                    />
+                  )}
+                </Fragment>
+              )
+            )}
+          </tbody>
+        </table>
       </form>
       <div>
-        
-      <h2 class="h">Add a question</h2>
-    
-      <form class="hello" onSubmit={handleAddFormSubmit}>
-        <div>
-        <label style={{fontSize:"35px" }}>Question:</label>
-        <input
-          className="col-xs-offset-2"
-          type="text"
-          name="question"
-          style={{width:"fit-content", fontSize:"25px"}}
-          required="required"
-          placeholder="Enter a question..."
-          value={addFormData.question}
-          onChange={handleAddFormChange}
-        />
-        <br/>
-        <br/>
-        <label style={{  fontSize:"35px" }}>Number of answers:</label>
-        <input
-          className="col-xs-offset-2"
-          type="text"
-          name="nb_ans"
-          required="required"
-          placeholder="Enter number..."
-          value={addFormData.nb_ans}
-          onChange={handleAddFormChange}
-          style={{fontSize:"40px"}}
-        />
-        <br/>
-        <br/>
-        <label style={{ fontSize:"35px" }} >Answers:</label>
-        {InputAnswers(addFormData.nb_ans,addFormData,handleAddFormChange)}
-        <br/>
-        <br/>
-        <label style={{ fontSize:"35px"}}>Correct answer:</label>
-        <select
-         style={{fontSize:"40px"}}
-          value={addFormData.correctAnswer}
-          onChange={handleAddFormChange}
-          class="j"
-        >
-          {DropList(addFormData.nb_ans)}
+        <h2 class="h">Add a question</h2>
 
-        </select>
-        </div>
-        {/* <button type="button" onClick={handleCancelClick}>
+        <form class="hello" onSubmit={handleAddFormSubmit}>
+          <div>
+            <label style={{ fontSize: "35px" }}>Question:</label>
+            <input
+              className="col-xs-offset-2"
+              type="text"
+              name="question"
+              style={{ width: "fit-content", fontSize: "25px" }}
+              required="required"
+              placeholder="Enter a question..."
+              value={addFormData.question}
+              onChange={handleAddFormChange}
+            />
+
+            <br />
+            <br />
+            <label style={{ fontSize: "35px" }}>Answers:</label>
+            <input
+              className="col-xs-offset-2"
+              value={addFormData.answer1}
+              required="required"
+              placeholder="Enter an answer..."
+              name="answer1"
+              style={{ width: "auto", fontSize: "25px" }}
+              onChange={handleAddFormChange}
+            />
+            <input
+              className="col-xs-offset-2"
+              value={addFormData.answer2}
+              required="required"
+              placeholder="Enter an answer..."
+              name="answer2"
+              style={{ width: "auto", fontSize: "25px" }}
+              onChange={handleAddFormChange}
+            />
+            <input
+              className="col-xs-offset-2"
+              value={addFormData.answer3}
+              required="required"
+              placeholder="Enter an answer..."
+              name="answer3"
+              style={{ width: "auto", fontSize: "25px" }}
+              onChange={handleAddFormChange}
+            />
+            <br />
+            <br />
+            <label style={{ fontSize: "35px" }}>Correct answer:</label>
+            <select
+            value={addFormData.correctAnswer}
+              style={{ fontSize: "40px" }}
+              onChange={handleAddFormChange}
+              class="j"
+              name="correctAnswer"
+            >
+              <option value={1}>1</option>;
+              <option value={2}>2</option>;
+              <option value={3}>3</option>;
+            </select>
+          </div>
+          {/* <button type="button" onClick={handleCancelClick}>
           Cancel
         </button> */}
-      </form>
+         <button type="submit">+</button>
+        </form>
       </div>
-      <button type="submit">+</button>
+     
     </div>
   );
 };

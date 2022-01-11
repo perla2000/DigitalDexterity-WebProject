@@ -30,7 +30,7 @@ class Database extends Component {
         }
       }
     }
-    alert("your grade is:"+result);
+    alert("your grade is:"+result*3.33);
     
     
   }

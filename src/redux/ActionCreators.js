@@ -1,17 +1,19 @@
 import * as ActionTypes from "./ActionTypes";
 import { baseUrl } from "../shared/baseUrl";
 export const postTest =
-  ( dateOuverture, duree, dateModification, quizTitle) => (dispatch) => {
+  ( dateOuverture, duree, quizTitle) => (dispatch) => {
+ 
     const newTest = {
   
       dateOuverture: dateOuverture,    // hon zedna
       duree: duree,
-      dateModification: dateModification,
+      dateModification: "",
       quizTitle: quizTitle,
     };
-    console.log("Test ", newTest);
-
-    return fetch(baseUrl + "test", {
+    //console.log("Test ", newTest);
+    // const tests = 'Tests ' + localStorage.getItem('token');
+   
+    return fetch(baseUrl + "tests", {
       method: "POST",
       body: JSON.stringify(newTest),
       headers: {
@@ -20,10 +22,14 @@ export const postTest =
       credentials: "same-origin",
     })
       .then(
+        
         (response) => {
+  
           if (response.ok) {
+            
             return response;
           } else {
+            alert("srna else")
             var error = new Error(
               "Error " + response.status + ": " + response.statusText
             );
@@ -32,13 +38,15 @@ export const postTest =
           }
         },
         (error) => {
+          
           var errmess = new Error(error.message);
           throw errmess;
         }
       )
       .then((response) => response.json())
-      .then((response) => dispatch(addTest(response))) // hon zedna
+      .then((response) => dispatch(addTest(response))) 
       .catch((error) => {
+        
         console.log("Post test ", error.message);
         alert("Your test could not be posted\nError: " + error.message);
       });
